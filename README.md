@@ -1,6 +1,6 @@
 # Ohjelmistotekniikan tehtävät
 
-Tässä repositoriossa on kurssin **Ohjelmistotekniikka** *vikkotehtävät*
+Tässä repositoriossa on kurssin **Ohjelmistotekniikka** *tehtävät*
 
 ## Tehtävät
 
