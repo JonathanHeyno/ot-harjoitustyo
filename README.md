@@ -8,3 +8,5 @@ Tässä repositoriossa on kurssin **Ohjelmistotekniikka** *tehtävät*
 [komentorivi.txt](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 [gitlog.txt](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+
+## Muuta
