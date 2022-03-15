@@ -1,0 +1,99 @@
+$ git log --stat | cat
+commit 5781747235def3094529ab2da92bccabb6a09d4e
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:46:13 2022 +0200
+
+    muutettiin file2 nimi ja poistettiin file1
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit cb38d0348deb542aa46a8dfddbd37552ccbf7c30
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:40:13 2022 +0200
+
+    Kommittoidaan tiedostoja
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2163cc91deab5673d35d44fd1bb402917261b149
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:34:45 2022 +0200
+
+    muutokset add -p ehdolla
+
+ eka.txt      |   4 +-
+ kolmas.txt   |   2 +
+ tiedosto.txt | 679 -----------------------------------------------------------
+ 3 files changed, 5 insertions(+), 680 deletions(-)
+
+commit 2515c6ab7be36ed0480f5cc11664bdbab8c8714d
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:31:11 2022 +0200
+
+    vaihdettu tiedoston nimi
+
+ eka.txt      | 679 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ tiedosto.txt | 108 +---------
+ toinen.txt   |   1 -
+ 3 files changed, 682 insertions(+), 106 deletions(-)
+
+commit dd67fe1d5312ddd17ad3f0843a51db1e7141bad4
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:25:03 2022 +0200
+
+    lisattiin tekstia tiedostoon
+
+ tiedosto.txt | 782 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 781 insertions(+), 1 deletion(-)
+
+commit 451b173fd4f337cdbb520e884b1f4af719df430a
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:17:04 2022 +0200
+
+    luotiin stuff kansio
+
+ stuff/jokin.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ffa59551758ff1086afb9ecf0e3d5759da230831
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:15:53 2022 +0200
+
+    muutettiin kahta tiedostoa
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit f75e335e812956563fbf89910b8348fab1d1fcb4
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:13:46 2022 +0200
+
+    lisattiin komas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 3bcc90b357e005fb18b1c462a483047e6c40fa49
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:06:41 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 59bf3e8cfab2aa23bae7c7bc86416f012832c585
+Author: JonathanHeyno <jona.heyno@gmail.com>
+Date:   Tue Mar 15 23:03:41 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
