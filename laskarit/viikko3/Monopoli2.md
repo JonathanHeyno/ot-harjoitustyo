@@ -9,17 +9,17 @@
 	  SattumaJaYhteismaa "1" -- "*" Kortti
 	  Kortti "1" -- "1" Toiminto
 	  Ruutu "*" -- "0..1" Pelaaja
-	  Aloitusruutu "" --i> "" Ruutu
-	  Vankila "" --i> "" Ruutu
-	  SattumaJaYhteismaa "" --i> "" Ruutu
-	  AsematJaLaitokset "" --i> "" Ruutu
-	  NormaalitKadut "" --i> "" Ruutu
+	  Aloitusruutu "" --|> "" Ruutu
+	  Vankila "" --|> "" Ruutu
+	  SattumaJaYhteismaa "" --|> "" Ruutu
+	  AsematJaLaitokset "" --|> "" Ruutu
+	  NormaalitKadut "" --|> "" Ruutu
 	  Pelilauta "1" -- "1" Aloitusruutu
 	  Pelilauta "1" -- "1" Vankila
 	  NormaalitKadut "*" -- "0..1" Pelaaja
 	  NormaalitKadut "*" -- "0..1" Rakennus
-	  Hotelli "" --i> ""Rakennus
-	  Talot "" --i> "" Rakennus
+	  Hotelli "" --|> ""Rakennus
+	  Talot "" --|> "" Rakennus
 	  Talot "1" -- "0..4" Talo
       class Pelilauta{
 
