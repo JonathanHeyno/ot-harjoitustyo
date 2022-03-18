@@ -8,7 +8,8 @@ Tässä repositoriossa on kurssin **Ohjelmistotekniikka** *projekti* ja *tehtäv
 
 [Vaatimusmäärittely](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-## Tehtävät
+
+## Viikkotehtävät
 
 ### Viikko 1
 [komentorivi.txt](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
