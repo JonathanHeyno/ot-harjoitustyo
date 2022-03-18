@@ -66,7 +66,4 @@
 	  class Kortti{
 	  
 	  }
-	  class Tyyppi{
-	  
-	  }
 ```
