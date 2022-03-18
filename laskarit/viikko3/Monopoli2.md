@@ -5,10 +5,10 @@
 	  Pelaaja "0..1" -- "1" Pelinappula
 	  Pelilauta "1" -- "2..8" Pelaaja
 	  Ruutu "" -- "1" Ruutu: seuraava ruutu
+	  Ruutu "*" -- "0..1" Pelaaja
 	  Ruutu "*" -- "1" Toiminto
 	  SattumaJaYhteismaa "1" -- "*" Kortti
 	  Kortti "1" -- "1" Toiminto
-	  Ruutu "*" -- "0..1" Pelaaja
 	  Aloitusruutu "" --|> "" Ruutu
 	  Vankila "" --|> "" Ruutu
 	  SattumaJaYhteismaa "" --|> "" Ruutu
