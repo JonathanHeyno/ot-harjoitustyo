@@ -6,7 +6,7 @@ Sovelluksella pelataan ristinollaa mielivaltaisen kokoisella ruudukolla mielival
 Peliä voi pelata normaalisti ihminen. Ohjelmistoon voi helposti lisätä omatekoisia algoritmeja joilla tietokone pelaa. Näin ollen peliä voi myös pelata kaksi tai useampi tietokonepelaaja käyttäen mahdollisesti eri algoritmeja.
 
 ## Perusversion tarjoama toiminnallisuus
-# New game näkymä
+### New game näkymä
   - Käyttäjä voi määrittää ruudukon koon
   - Käyttäjä voi määrittää montako merkkiä pitää saada jonoon
   - Käyttäjä voi rekisteröidä uusia pelaajia
@@ -15,13 +15,13 @@ Peliä voi pelata normaalisti ihminen. Ohjelmistoon voi helposti lisätä omatek
   - Käyttäjä voi määrittää tietokonepelaajille vaikeustason
   - Käyttäjä voi määrittää millä symbolilla kukin pelaaja pelaa
 
-# Save näkymä
+### Save näkymä
   - Käyttäjä voi tallentaa pelin tietyllä nimellä
  
-# Load näkymä
+### Load näkymä
   - Käyttäjä voi ladata tallennetun pelin
  
-# Scores näkymä
+### Scores näkymä
   - Ohjelma näyttää kullekin (ihmis) käyttäjälle voitot, tappiot ja tasapelit
 
 ## Jatkokehitysideoita
