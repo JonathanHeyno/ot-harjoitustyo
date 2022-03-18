@@ -1,6 +1,6 @@
 # Ohjelmistotekniikan kurssi
 
-Tässä repositoriossa on kurssin **Ohjelmistotekniikka** *projekti* ja *tehtävät*
+Tässä repositoriossa on kurssin **Ohjelmistotekniikka** *projekti* ja *viikkotehtävät*
 
 ## Projekti
 ### Dokumentaatio
