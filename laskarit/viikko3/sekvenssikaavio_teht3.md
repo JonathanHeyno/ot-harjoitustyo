@@ -12,7 +12,7 @@ sequenceDiagram
   Machine->>Engine: start()
   Engine->>FuelTank: consume(5)
   Machine->>Engine: is_running()
-  Engine-->>FuelTank: True
+  Engine-->>FuelTank: true
   Machine->>Engine: use_energy()
   Engine->>FuelTank: consume(10)
 ```
