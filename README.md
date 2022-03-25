@@ -15,3 +15,6 @@ Tässä repositoriossa on kurssin **Ohjelmistotekniikka** *projekti* ja *viikkot
 [komentorivi.txt](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 [gitlog.txt](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+
+### Viikko 2
+[laskarit](https://github.com/JonathanHeyno/ot-harjoitustyo/tree/master/laskarit/viikko2)
