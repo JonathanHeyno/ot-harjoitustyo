@@ -3,7 +3,7 @@
 Sovelluksella pelataan ristinollaa mielivaltaisen kokoisella ruudukolla mielivaltaista määrää vastustajia vastaan. Ohjelmalla voi pelata myös tietokonepelaajaa vastaan. Ohjelma pitää kirjaa voitoista ja tappioista jokaisen pelaajan (ihmisen) osalta.
 
 ## Toimintaympäristö
-Ohjelmiston tulee toimia työpöytäsovelluksena laitoksen Linux-koneilla tai uusimmat päivitykset sisältävällä cubbli-linuxilla.
+Ohjelmiston tulee toimia työpöytäsovelluksena laitoksen Linux-koneilla tai uusimmat päivitykset sisältävällä cubbli-linuxilla. Ohjelmisto toimii Python versiolla 3.8. Aiempien python versioiden suhteen ohjelmiston toimintaa ei testata.
 
 ## Käyttäjät
 Peliä voi pelata normaalisti ihminen. Ohjelmistoon voi helposti lisätä omatekoisia algoritmeja joilla tietokone pelaa. Näin ollen peliä voi myös pelata kaksi tai useampi tietokonepelaaja käyttäen mahdollisesti eri algoritmeja.
