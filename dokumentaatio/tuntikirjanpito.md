@@ -5,4 +5,5 @@
 | 18.3. | 4    | aiheen miettiminen, ohjelmiston hahmottelu, määrittelydokumentti |
 |       | 4    | pelin logiikan kehittely, tekstikäyttöliittymän väsääminen |
 | 25.3. | 5    | pelin logiikan kehittely, tekstikäyttöliittymän väsääminen |
-| yht   | 13   | | 
+| 27.3. | 4    | pelin logiikan kehittely, tekstikäyttöliittymän väsääminen |
+| yht   | 17   | | 
