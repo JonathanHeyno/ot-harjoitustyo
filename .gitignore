@@ -1,0 +1,10 @@
+.vscode
+.DS_Store
+.pytest_cache
+__pycache__
+.coverage
+htmlcov
+*__pycache__/
+*.db
+*.py[cod]
+*$py.class
