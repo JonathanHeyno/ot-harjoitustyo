@@ -8,8 +8,8 @@ class App():
         self.__players = []
 
     def __start(self):
-        print("\nNew game\nLoad game\nSave game\nQuit\n")
-        choice = input("N/L/S/Q: ").lower()
+        print("\nNew game\nQuit\n")
+        choice = input("N/Q: ").lower()
         return choice 
 
     def __create_new_player(self):
