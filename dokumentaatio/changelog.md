@@ -8,3 +8,6 @@
 - Käyttäjä ei voi valita ruutua laudan ulkopuolelta
 - Käyttäjä ei voi valita ruutua joka ei ole vapaa
 - Peliä pystyy pelaamaan tekstikäyttöliittymästä antamalla koordinaatteja
+## Viikko 3
+- Testit game luokalle
+- Invoke tehtävät käynnistykselle, testaamiselle ja testi coveragelle
