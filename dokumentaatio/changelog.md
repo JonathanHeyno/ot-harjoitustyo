@@ -11,3 +11,5 @@
 ## Viikko 3
 - Testit game luokalle
 - Invoke tehtävät käynnistykselle, testaamiselle ja testi coveragelle
+- Käyttäjä voi pelata tyhmää tietokonepelaajaa vastaan tyhmä joka arpoo vapaan ruudun
+- Käyttäjä voi pelata tietokonepelaajaa vastaan joka laskee vapaille ruuduille jonkin arvon
