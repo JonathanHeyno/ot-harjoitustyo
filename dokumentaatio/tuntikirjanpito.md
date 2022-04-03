@@ -7,4 +7,6 @@
 | 25.3. | 5    | pelin logiikan kehittely, tekstikäyttöliittymän väsääminen |
 | 27.3. | 6    | pelin logiikan kehittely, tekstikäyttöliittymän väsääminen |
 | 29.3. | 5    | pelin logiikan kehittely, luvattomien siirtojen estäminen |
-| yht   | 24   | | 
+| 1.4.  | 5    | testien tekeminen game luokalle, invoke tehtävien tekeminen |
+| 2.4.  | 7    | tietokonepelaajan logiikan kehittely |
+| yht   | 36   | | 
