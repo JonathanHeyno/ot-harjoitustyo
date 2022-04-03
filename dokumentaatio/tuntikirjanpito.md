@@ -11,4 +11,4 @@
 | 2.4.  | 7    | tietokonepelaajan logiikan kehittely |
 | 3.4.  | 3    | tietokonepelaajien logiikan kehittely |
 |       | 4    | tutustuminen tkinteriin |
-| yht   | 39   | | 
+| yht   | 43   | | 
