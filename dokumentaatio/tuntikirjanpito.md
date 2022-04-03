@@ -10,4 +10,5 @@
 | 1.4.  | 5    | testien tekeminen game luokalle, invoke tehtävien tekeminen |
 | 2.4.  | 7    | tietokonepelaajan logiikan kehittely |
 | 3.4.  | 3    | tietokonepelaajien logiikan kehittely |
+|       | 4    | tutustuminen tkinteriin |
 | yht   | 39   | | 
