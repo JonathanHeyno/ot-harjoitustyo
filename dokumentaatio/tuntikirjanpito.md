@@ -9,4 +9,5 @@
 | 29.3. | 5    | pelin logiikan kehittely, luvattomien siirtojen estäminen |
 | 1.4.  | 5    | testien tekeminen game luokalle, invoke tehtävien tekeminen |
 | 2.4.  | 7    | tietokonepelaajan logiikan kehittely |
-| yht   | 36   | | 
+| 3.4.  | 3    | tietokonepelaajien logiikan kehittely |
+| yht   | 39   | | 
