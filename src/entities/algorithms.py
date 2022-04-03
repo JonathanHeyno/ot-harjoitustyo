@@ -1,4 +1,6 @@
 from entities.human import Human
+from entities.uniform import Uniform
+from entities.valuebased import Valuebased
 
 
 class Algorithms():
@@ -7,12 +9,10 @@ class Algorithms():
 
 
     def select_algorithm(self):
-        return Human()
-        '''
-        choice = input("Choose player type: ")
+        choice = input("Choose player type (Human=H, Uniform=U, Valuebased=V): ").lower()
         algorithms = {
-            "Human": Human(),
+            "h": Human(),
+            "u": Uniform(),
+            "v": Valuebased()
             }
         return algorithms.get(choice)
-        '''
-
