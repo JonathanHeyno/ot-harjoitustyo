@@ -10,3 +10,5 @@ Ohjelman toiminta on testattu Python versiolla 3.8 laitoksen Linux ympäristöss
 - [Vaatimusmäärittely](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 - [Changelog](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
+
+- [Arkkitehtuuri](https://github.com/JonathanHeyno/ot-harjoitustyo/new/master/dokumentaatio)
