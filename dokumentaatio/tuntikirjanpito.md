@@ -12,4 +12,5 @@
 | 3.4.  | 3    | tietokonepelaajien logiikan kehittely |
 |       | 4    | tutustuminen tkinteriin |
 | 4.4.  | 6    | pelinäkymän toteutus tkintrillä |
-| yht   | 49   | | 
+| 5.4.  | 7    | ruudukon tekeminen graafiseksi tkinterillä |
+| yht   | 56   | | 
