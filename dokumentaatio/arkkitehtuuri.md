@@ -18,15 +18,15 @@ Pelin logiikasta vastaavien luokkien välistä yhteyttä kuvaa seuraava luokkaka
 
 ```mermaid
  classDiagram
-      GameService "1" --> "1" Game
-      GameService -->> Algorithms
-      GameService "1" --> "*" Player
-      Player "0..1" --> "0..1" Human
-      Player "0..1" --> "0..1" Uniform
-      Player "0..1" --> "0..1" Valuebased
-      Algorithms -->> Human
-      Algorithms -->> Uniform
-      Algorithms -->> Valuebased
+      GameService "1" -- "1" Game
+      GameService--|>Algorithms
+      GameService "1" -- "*" Player
+      Player "0..1" -- "0..1" Human
+      Player "0..1" -- "0..1" Uniform
+      Player "0..1" -- "0..1" Valuebased
+      Algorithms--|>Human
+      Algorithms--|>Uniform
+      Algorithms--|>Valuebased
       class GameService{
       }
       class Game{
