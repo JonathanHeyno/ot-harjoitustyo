@@ -10,13 +10,13 @@ Peliä voi pelata normaalisti ihminen. Ohjelmistoon voi helposti lisätä omatek
 
 ## Perusversion tarjoama toiminnallisuus
 ### New game näkymä
-  - Käyttäjä voi määrittää ruudukon koon :heavy_check_mark:
-  - Käyttäjä voi määrittää montako merkkiä pitää saada jonoon
-  - Käyttäjä voi rekisteröidä uusia pelaajia
-  - Käyttäjä voi määrittää ketkä pelaavat. Pelaajia voi olla enemmän kuin kaksi
-  - Käyttäjä voi määrittää millä algoritmeilla tietokonepelaajat pelaavat
-  - Käyttäjä voi määrittää tietokonepelaajille vaikeustason
-  - Käyttäjä voi määrittää millä symbolilla kukin pelaaja pelaa
+  -[x] Käyttäjä voi määrittää ruudukon koon
+  -[x] Käyttäjä voi määrittää montako merkkiä pitää saada jonoon
+  -[] Käyttäjä voi rekisteröidä uusia pelaajia
+  -[x] Käyttäjä voi määrittää ketkä pelaavat. Pelaajia voi olla enemmän kuin kaksi
+  -[x] Käyttäjä voi määrittää millä algoritmeilla tietokonepelaajat pelaavat
+  -[] Käyttäjä voi määrittää tietokonepelaajille vaikeustason
+  -[x] Käyttäjä voi määrittää millä symbolilla kukin pelaaja pelaa
 
 ### Save näkymä
   - Käyttäjä voi tallentaa pelin tietyllä nimellä
