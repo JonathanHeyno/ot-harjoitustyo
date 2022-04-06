@@ -5,13 +5,13 @@ Sovelluksella pelataan ristinollaa mielivaltaisen kokoisella ruudukolla mielival
 Ohjelman toiminta on testattu Python versiolla 3.8 laitoksen Linux ympäristössä. Ohjelma voi toimia myös aikaisemmilla versioilla ja muilla käyttöjärjestelmillä, mutta tätä ei ole varmennettu.
 
 ## Dokumentaatio
-- [Tuntikirjanpito](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+- [Tuntikirjanpito](./dokumentaatio/tuntikirjanpito.md)
 
-- [Vaatimusmäärittely](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+- [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
 
-- [Changelog](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
+- [Changelog](./dokumentaatio/changelog.md)
 
-- [Arkkitehtuuri](https://github.com/JonathanHeyno/ot-harjoitustyo/new/master/dokumentaatio)
+- [Arkkitehtuuri](./dokumentaatio/arkkitehtuuri.md)
 
 ## Komentorivitoiminnot
 ### Ohjelman suorittaminen
@@ -33,7 +33,7 @@ poetry run invoke coverage-report
 ```
 
 ### Koodin laatuvarmistukset
-Koodin laadun tiedoston [.pylintrc](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/.pylintrc) määrittelemien ehtojen mukaisesti voi arvioida komennolla
+Koodin laadun tiedoston [.pylintrc](./.pylintrc) määrittelemien ehtojen mukaisesti voi arvioida komennolla
 ```
 poetry run invoke lint
 ```
