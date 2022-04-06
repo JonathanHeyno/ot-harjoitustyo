@@ -2,6 +2,7 @@
 
 ## Rakenne
 Koodin pakkausrakenne on seuraava
+
 ![pakkausrakenne](./kuvat/pakkauskaavio.svg)
 
 Pakkaus **ui** sisältää käyttöliittymästä vastaavan koodin. **Services** sisältää *GameService* luokan joka tarjoaa rajapinnan käyttöliittymälle. *GameService* luokka pyörittää peliä luomalla **entities** pakkauksessa olevat oliot ja välittää niille käskyt. 
