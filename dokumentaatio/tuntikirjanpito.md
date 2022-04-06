@@ -13,5 +13,5 @@
 |       | 4    | tutustuminen tkinteriin |
 | 4.4.  | 6    | pelinäkymän toteutus tkintrillä |
 | 5.4.  | 7    | ruudukon tekeminen graafiseksi tkinterillä |
-| 6.4.  | 5    | arkkitehtuurikuvaus |
-| yht   | 61   | | 
+| 6.4.  | 3    | arkkitehtuurikuvaus |
+| yht   | 59   | | 
