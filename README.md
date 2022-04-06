@@ -16,24 +16,24 @@ Ohjelman toiminta on testattu Python versiolla 3.8 laitoksen Linux ympäristöss
 ## Komentorivitoiminnot
 ### Ohjelman suorittaminen
 Ohjelman voi käynnistää komentoriviltä komennolla
-'''
+```
 poetry run invoke start
-'''
+```
 
 ### Testaus
 Ohjelmalle voi ajaa testit komentoriviltä komennolla
-'''
+```
 poetry run invoke test
-'''
+```
 
 ### Testikattavuusraportti
 Ohjelmalle saa muodostetua testikattavuusraportin *htmlcov* -hakemistoon komennolla
-'''
+```
 poetry run invoke coverage-report
-'''
+```
 
 ### Koodin laatuvarmistukset
-Koodin laadun tiedoston [pylintrc](https://github.com/JonathanHeyno/ot-harjoitustyo) määrittelemien ehtojen mukaisesti voi arvioida komennolla
-'''
+Koodin laadun tiedoston [.pylintrc](https://github.com/JonathanHeyno/ot-harjoitustyo) määrittelemien ehtojen mukaisesti voi arvioida komennolla
+```
 poetry run invoke lint
-'''
+```
