@@ -33,7 +33,7 @@ poetry run invoke coverage-report
 ```
 
 ### Koodin laatuvarmistukset
-Koodin laadun tiedoston [.pylintrc](https://github.com/JonathanHeyno/ot-harjoitustyo) määrittelemien ehtojen mukaisesti voi arvioida komennolla
+Koodin laadun tiedoston [.pylintrc](https://github.com/JonathanHeyno/ot-harjoitustyo/blob/master/.pylintrc) määrittelemien ehtojen mukaisesti voi arvioida komennolla
 ```
 poetry run invoke lint
 ```
