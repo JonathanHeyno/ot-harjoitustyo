@@ -10,7 +10,7 @@ Peliä voi pelata normaalisti ihminen. Ohjelmistoon voi helposti lisätä omatek
 
 ## Perusversion tarjoama toiminnallisuus
 ### New game näkymä
-  - Käyttäjä voi määrittää ruudukon koon :check:
+  - Käyttäjä voi määrittää ruudukon koon :check_mark:
   - Käyttäjä voi määrittää montako merkkiä pitää saada jonoon
   - Käyttäjä voi rekisteröidä uusia pelaajia
   - Käyttäjä voi määrittää ketkä pelaavat. Pelaajia voi olla enemmän kuin kaksi
