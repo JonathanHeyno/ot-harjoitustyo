@@ -16,4 +16,4 @@
 | 6.4.  | 3    | arkkitehtuurikuvaus |
 |       | 4    | ruudukon tekeminen tkinterillä |
 | 7.4.  | 8    | graafisen käyttöliittymän kommunikointi pelin kanssa |
-| yht   | 59   | | 
+| yht   | 71   | | 
