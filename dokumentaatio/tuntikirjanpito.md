@@ -18,4 +18,5 @@
 | 7.4.  | 8    | graafisen käyttöliittymän kommunikointi pelin kanssa |
 | 8.4.  | 2    | graafisen käyttöliittymän näkymien vaihtaminen sujuvammaksi |
 |       | 5    | newgame näkymän väsääminen tkinterillä |
-| yht   | 78   | | 
+| 9.4.  | 5    | pylint ongelmien korjaaminen |
+| yht   | 83   | | 
