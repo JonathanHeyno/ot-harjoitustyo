@@ -1,15 +1,13 @@
 class Game:
-    def __init__(self, rows, cols, how_many_to_win):
+    def __init__(self, size, how_many_to_win):
         self.__is_over = False
         self.__is_won = False
-        self.__rows = rows
-        self.__cols = cols
-        self.__board = [[" " for i in range(cols)] for j in range(rows)]
-        self.__available_squares = rows*cols
+        self.__size = size
+        self.__board = [["" for i in range(size)] for j in range(size)]
+        self.__available_squares = size*size
         self.__how_many_to_win = how_many_to_win
         self.__player_symbols = []
-        self.__number_of_players = 0
-
+        #self.__number_of_players = 0
 
     @property
     def is_won(self):
@@ -32,13 +30,17 @@ class Game:
         self.__is_over = is_over
 
     @property
+    def size(self):
+        return self.__size
+
+    @property
     def board(self):
         return self.__board
 
     @property
     def how_many_to_win(self):
         return self.__how_many_to_win
-    
+
     @property
     def player_symbols(self):
         return self.__player_symbols
@@ -46,49 +48,76 @@ class Game:
     @player_symbols.setter
     def player_symbols(self, player_symbols):
         self.__player_symbols = player_symbols
-        self.__number_of_players = len(player_symbols)
+        #self.__number_of_players = len(player_symbols)
 
     @property
     def number_of_players(self):
-        return self.__number_of_players
+        #return self.__number_of_players
+        return len(self.player_symbols)
 
-
-    def __on_board(self, x, y):
-        if (x >= self.__rows or x < 0 or y >= self.__cols or y < 0):
+    def __on_board(self, x_coord, y_coord):
+        if (x_coord >= self.__size or x_coord < 0 or y_coord >= self.__size or y_coord < 0):
             return False
         return True
 
-    def __check_if_won_in_direction(self, x, y, dx, dy):        
-        while(self.__on_board(x+dx, y+dy) and self.__board[x+dx][y+dy] == self.__board[x][y]):
-            x += dx
-            y += dy
+    def __check_if_won_in_direction(self, x_coord, y_coord, delta_x, delta_y):
+        if not self.__board[x_coord][y_coord]:
+            return []
+        while(self.__on_board(x_coord+delta_x, y_coord+delta_y)
+                and self.__board[x_coord+delta_x][y_coord+delta_y]
+                == self.__board[x_coord][y_coord]):
+            x_coord += delta_x
+            y_coord += delta_y
         in_a_row = 1
-        while(self.__on_board(x-dx, y-dy) and self.__board[x-dx][y-dy] == self.__board[x][y] and in_a_row < self.__how_many_to_win):
+        winners = []
+        winners.append((x_coord, y_coord))
+        while(self.__on_board(x_coord-delta_x, y_coord-delta_y)
+                and self.__board[x_coord-delta_x][y_coord-delta_y] == self.__board[x_coord][y_coord]
+                and in_a_row < self.__how_many_to_win):
             in_a_row += 1
-            x -= dx
-            y -= dy
-        if (in_a_row >= self.__how_many_to_win):
+            x_coord -= delta_x
+            y_coord -= delta_y
+            winners.append((x_coord, y_coord))
+        if in_a_row >= self.__how_many_to_win:
             self.__is_over = True
             self.__is_won = True
+            return winners
+        return []
 
-    def __update_status(self, x, y):
-        if (self.__available_squares == 0):
+    def __update_status(self, x_coord, y_coord):
+        if self.__available_squares == 0:
             self.__is_over = True
-        self.__check_if_won_in_direction(x, y, 1, 0)
-        self.__check_if_won_in_direction(x, y, 0, 1)
-        self.__check_if_won_in_direction(x, y, 1, 1)
-        self.__check_if_won_in_direction(x, y, 1, -1)
+        self.__check_if_won_in_direction(x_coord, y_coord, 1, 0)
+        self.__check_if_won_in_direction(x_coord, y_coord, 0, 1)
+        self.__check_if_won_in_direction(x_coord, y_coord, 1, 1)
+        self.__check_if_won_in_direction(x_coord, y_coord, 1, -1)
 
-    def add_move(self, x, y, symbol):
-        if (self.__is_over):
+    def add_move(self, x_coord, y_coord, symbol):
+        if self.__is_over:
             raise IndexError("Game is over")
-        elif (not isinstance(x, int) or not isinstance(y, int)):
+        if not isinstance(x_coord, int) or not isinstance(y_coord, int):
             raise TypeError("Integer value required")
-        elif (not self.__on_board(x, y)):
+        if not self.__on_board(x_coord, y_coord):
             raise IndexError("Off board")
-        elif (self.__board[x][y] != " "):
+        if self.__board[x_coord][y_coord]:
             raise ValueError("Space not empty")
-        else:
-            self.__board[x][y] = symbol
-            self.__available_squares -= 1
-            self.__update_status(x, y)
+
+        self.__board[x_coord][y_coord] = symbol
+        self.__available_squares -= 1
+        self.__update_status(x_coord, y_coord)
+
+    def get_winning_row(self):
+        winners = []
+        for i in range(self.__size):
+            for j in range(self.__size):
+                winners += self.__check_if_won_in_direction(i, j, 1, 0)
+                winners += self.__check_if_won_in_direction(i, j, 0, 1)
+                winners += self.__check_if_won_in_direction(i, j, 1, 1)
+                winners += self.__check_if_won_in_direction(i, j, 1, -1)
+
+        duplicates_removed = []
+        for winner in winners:
+            if winner not in duplicates_removed:
+                duplicates_removed.append(winner)
+
+        return duplicates_removed
