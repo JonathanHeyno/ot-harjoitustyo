@@ -65,7 +65,7 @@ class GameService():
     def add_move_and_get_updates(self, i):
         moves = []
         self.game.add_move((i//self.size), (i % self.size),
-        self.player_symbols[self.turn])
+                           self.player_symbols[self.turn])
         moves.append((i, self.player_symbols[self.turn]))
         self.turn = (self.turn + 1) % self.__number_of_players
         while not self.players[self.turn].is_human and not self.game.is_over:
