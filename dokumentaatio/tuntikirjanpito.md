@@ -19,4 +19,5 @@
 | 8.4.  | 2    | graafisen käyttöliittymän näkymien vaihtaminen sujuvammaksi |
 |       | 5    | newgame näkymän väsääminen tkinterillä |
 | 9.4.  | 4    | pylint ongelmien korjaaminen |
-| yht   | 82   | | 
+| 10.4. | 3    | voittavan rivin korostaminen pelinäkymässä |
+| yht   | 85   | | 
