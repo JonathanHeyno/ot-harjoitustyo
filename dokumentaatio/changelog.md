@@ -14,5 +14,5 @@
 - Käyttäjä voi pelata tyhmää tietokonepelaajaa vastaan joka arpoo vapaan ruudun
 - Käyttäjä voi pelata tietokonepelaajaa vastaan joka laskee vapaille ruuduille jonkin arvon
 ## Viikko 4
-- Grrafinen käyttöliittymä pelin pelaamiseksi
+- Graafinen käyttöliittymä pelin pelaamiseksi
 - Invoke tehtävä lintille
