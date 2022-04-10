@@ -64,16 +64,16 @@ class Game:
         if not self.__board[x_coord][y_coord]:
             return []
         while(self.__on_board(x_coord+delta_x, y_coord+delta_y)
-                and self.__board[x_coord+delta_x][y_coord+delta_y]
-                == self.__board[x_coord][y_coord]):
+        and self.__board[x_coord+delta_x][y_coord+delta_y]
+        == self.__board[x_coord][y_coord]):
             x_coord += delta_x
             y_coord += delta_y
         in_a_row = 1
         winners = []
         winners.append((x_coord, y_coord))
         while(self.__on_board(x_coord-delta_x, y_coord-delta_y)
-                and self.__board[x_coord-delta_x][y_coord-delta_y] == self.__board[x_coord][y_coord]
-                and in_a_row < self.__how_many_to_win):
+        and self.__board[x_coord-delta_x][y_coord-delta_y] == self.__board[x_coord][y_coord]
+        and in_a_row < self.__how_many_to_win):
             in_a_row += 1
             x_coord -= delta_x
             y_coord -= delta_y

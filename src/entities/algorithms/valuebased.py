@@ -20,13 +20,13 @@ class Valuebased():
         rows = size
         cols = size
         while(self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols)
-            and board[coords[0]+deltas[0]][coords[1]+deltas[1]] == board[coords[0]][coords[1]]):
+        and board[coords[0]+deltas[0]][coords[1]+deltas[1]] == board[coords[0]][coords[1]]):
             coords[0] += deltas[0]
             coords[1] += deltas[1]
         in_a_row = 1
         while(self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols)
-            and board[coords[0]-deltas[0]][coords[1]-deltas[1]] == board[coords[0]][coords[1]]
-            and in_a_row < amount):
+        and board[coords[0]-deltas[0]][coords[1]-deltas[1]] == board[coords[0]][coords[1]]
+        and in_a_row < amount):
             in_a_row += 1
             coords[0] -= deltas[0]
             coords[1] -= deltas[1]
@@ -72,21 +72,21 @@ class Valuebased():
         rows = size
         cols = size
         while(self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols)
-            and board[coords[0]+deltas[0]][coords[1]+deltas[1]] == board[coords[0]][coords[1]]):
+        and board[coords[0]+deltas[0]][coords[1]+deltas[1]] == board[coords[0]][coords[1]]):
             coords[0] += deltas[0]
             coords[1] += deltas[1]
         if ((not self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols))
-            or board[coords[0]+deltas[0]][coords[1]+deltas[1]]):
+        or board[coords[0]+deltas[0]][coords[1]+deltas[1]]):
             return False
         in_a_row = 1
         while(self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols)
-            and board[coords[0]-deltas[0]][coords[1]-deltas[1]] == board[coords[0]][coords[1]]
-            and in_a_row < how_many_to_win):
+        and board[coords[0]-deltas[0]][coords[1]-deltas[1]] == board[coords[0]][coords[1]]
+        and in_a_row < how_many_to_win):
             in_a_row += 1
             coords[0] -= deltas[0]
             coords[1] -= deltas[1]
         if ((not self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols))
-            or board[coords[0]-deltas[0]][coords[1]-deltas[1]]):
+        or board[coords[0]-deltas[0]][coords[1]-deltas[1]]):
             return False
         if in_a_row >= how_many_to_win:
             return True
@@ -104,7 +104,7 @@ class Valuebased():
                     board[x_coord][y_coord] = ""
                     winning_moves.append((x_coord, y_coord))
                 elif self.__open_ended_n_in_direction([x_coord, y_coord], (0, 1),
-                                                    board, size, amount):
+                board, size, amount):
                     board[x_coord][y_coord] = ""
                     winning_moves.append((x_coord, y_coord))
                 elif self.__open_ended_n_in_direction([x_coord, y_coord], (1, 1),
@@ -130,9 +130,9 @@ class Valuebased():
         steps = 1
         points = 0
         while(self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols)
-            and (board[coords[0]+deltas[0]][coords[1]+deltas[1]] == symbol
-            or (not board[coords[0]+deltas[0]][coords[1]+deltas[1]]))
-            and num < how_many_to_win-1):
+        and (board[coords[0]+deltas[0]][coords[1]+deltas[1]] == symbol
+        or (not board[coords[0]+deltas[0]][coords[1]+deltas[1]]))
+        and num < how_many_to_win-1):
             coords[0] += deltas[0]
             coords[1] += deltas[1]
             num += 1
@@ -144,9 +144,9 @@ class Valuebased():
             coords[0] -= deltas[0]
             coords[1] -= deltas[1]
         while(self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols)
-            and (board[coords[0]-deltas[0]][coords[1]-deltas[1]] == symbol
-            or (not board[coords[0]-deltas[0]][coords[1]-deltas[1]]))
-            and num < how_many_to_win):
+        and (board[coords[0]-deltas[0]][coords[1]-deltas[1]] == symbol
+        or (not board[coords[0]-deltas[0]][coords[1]-deltas[1]]))
+        and num < how_many_to_win):
             coords[0] -= deltas[0]
             coords[1] -= deltas[1]
             num += 1
