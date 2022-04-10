@@ -75,8 +75,8 @@ class Valuebased():
               and board[coords[0]+deltas[0]][coords[1]+deltas[1]] == board[coords[0]][coords[1]]):
             coords[0] += deltas[0]
             coords[1] += deltas[1]
-        if ((not self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols))
-              or board[coords[0]+deltas[0]][coords[1]+deltas[1]]):
+        if ((not self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols)) or
+              board[coords[0]+deltas[0]][coords[1]+deltas[1]]):
             return False
         in_a_row = 1
         while(self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols)
@@ -85,8 +85,8 @@ class Valuebased():
             in_a_row += 1
             coords[0] -= deltas[0]
             coords[1] -= deltas[1]
-        if ((not self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols))
-              or board[coords[0]-deltas[0]][coords[1]-deltas[1]]):
+        if ((not self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols)) or
+              board[coords[0]-deltas[0]][coords[1]-deltas[1]]):
             return False
         if in_a_row >= how_many_to_win:
             return True
