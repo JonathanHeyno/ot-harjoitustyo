@@ -62,8 +62,8 @@ class UI:
         screen_width = self._root.winfo_width()
         screen_height = self._root.winfo_height()
         if screen_width == 1 and screen_height == 1:
-            screen_width = 500
-            screen_height = 450
+            screen_width = 550
+            screen_height = 350
         self._hide_current_view()
 
         self._current_view = NewGameView(
