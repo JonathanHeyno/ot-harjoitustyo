@@ -20,4 +20,5 @@
 |       | 5    | newgame näkymän väsääminen tkinterillä |
 | 9.4.  | 4    | pylint ongelmien korjaaminen |
 | 10.4. | 3    | voittavan rivin korostaminen pelinäkymässä, tkinter tekstityyppien muokkaus |
+| 15.4. | 4    | voittotilastojen tallentaminen tietokantaan |
 | yht   | 85   | | 
