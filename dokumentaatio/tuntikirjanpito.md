@@ -22,4 +22,5 @@
 | 10.4. | 3    | voittavan rivin korostaminen pelinäkymässä, tkinter tekstityyppien muokkaus |
 | 15.4. | 4    | voittotilastojen tallentaminen tietokantaan |
 | 16.4. | 6    | voittotilastojen tallentaminen tietokantaan |
-| yht   | 95   | | 
+| 17.4. | 5    | tietokantojen konfigurointi, pylint korjauksia |
+| yht   | 100  | | 
