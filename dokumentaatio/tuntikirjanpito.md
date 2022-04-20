@@ -25,5 +25,5 @@
 | 17.4. | 5    | tietokantojen konfigurointi, pylint korjauksia |
 | 19.4. | 5    | testit repoille ja tietokannoille |
 | 20.4. | 4    | konfiguraatiotiedoston muokkaus unix ympäristölle, lint korjauksia|
-| 20.4. | 3    | dokumentoinnin päivitys ja sekvenssikaavio|
+|       | 3    | dokumentoinnin päivitys ja sekvenssikaavio|
 | yht   | 112  | | 
