@@ -22,8 +22,8 @@ class NewGameView:
 
     def pack(self):
         self._frame_a.pack(fill=tk.Y)
-        #self._frame_b.pack(fill=tk.BOTH, expand=True)
-        self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
+        self._frame_b.pack(fill=tk.BOTH, expand=True)
+        #self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
         # self._frame_a.pack(fill=constants.X)
         # self._frame_b.pack(fill=constants.X)
 
@@ -39,8 +39,8 @@ class NewGameView:
         self._frame_a.pack(side=tk.LEFT, fill=tk.Y)
 
         self._frame_b = ttk.Frame(master=self._root)
-        #self._frame_b.pack(fill=tk.BOTH, expand=True)
-        self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
+        self._frame_b.pack(fill=tk.BOTH, expand=True)
+        #self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
 
         start_button = ttk.Button(master=self._frame_a, text="New")
         start_button.pack()

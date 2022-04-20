@@ -15,8 +15,8 @@ class ScoresView:
 
     def pack(self):
         self._frame_a.pack(fill = tk.Y)
-        #self._frame_b.pack(fill=tk.BOTH, expand=True)
-        self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
+        self._frame_b.pack(fill=tk.BOTH, expand=True)
+        #self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
 
 
     def destroy(self):
