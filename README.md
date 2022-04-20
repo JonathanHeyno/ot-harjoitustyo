@@ -15,7 +15,7 @@ Ohjelman toiminta on testattu Python versiolla 3.8 laitoksen Linux ympäristöss
 
 ## Komentorivitoiminnot
 ### Ohjelman suorittaminen
-Asenna riippuvuudet komennolla
+Mene ohjelman kansioon ja asenna riippuvuudet komennolla
 ```
 poetry install
 ```
