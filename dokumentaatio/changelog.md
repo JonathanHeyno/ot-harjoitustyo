@@ -18,3 +18,4 @@
 - Invoke tehtävä lintille
 ## Viikko 5
 - Pelitulosten tallentaminen tietokantaan
+- Testit tietokannoille
