@@ -15,6 +15,10 @@ Ohjelman toiminta on testattu Python versiolla 3.8 laitoksen Linux ympäristöss
 
 ## Komentorivitoiminnot
 ### Ohjelman suorittaminen
+Asenna riippuvuudet komennolla
+```
+poetry install
+```
 Ohjelman voi käynnistää komentoriviltä komennolla
 ```
 poetry run invoke start
