@@ -39,7 +39,7 @@ sequenceDiagram
   User->>UI: click "New Game" button
   UI->>GameService: new_game(size, how_many_to_win)
   GameService->>Game: Game(size, how_many_to_win)
-  UI->>Gameservice: add_player(name, symbol, str_algorithm, difficulty, is_human)
+  UI->>GameService: add_player(name, symbol, str_algorithm, difficulty, is_human)
   GameService->>AlgorithmManager: AlgorithmManager()
   AlgorithmManager-->>GameService: algorithm
   GameService->>Player: Player(name, symbol, algorithm, is_human)
