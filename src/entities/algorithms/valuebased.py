@@ -1,4 +1,4 @@
-#from random import randint
+from random import choice, random
 
 
 class Valuebased():
@@ -119,17 +119,15 @@ class Valuebased():
                     board[x_coord][y_coord] = ""
         return winning_moves
 
-
-
     # Check if there are n in a row with empty spaces at both ends
     def __calculate_points_in_direction(self, coords, deltas,
                                         board, size, how_many_to_win, symbol):
-        rows = size
-        cols = size
+        #rows = size
+        #cols = size
         num = 0
         steps = 1
         points = 0
-        while(self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols)
+        while(self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], size, size)
               and (board[coords[0]+deltas[0]][coords[1]+deltas[1]] == symbol
                    or (not board[coords[0]+deltas[0]][coords[1]+deltas[1]]))
               and num < how_many_to_win-1):
@@ -143,7 +141,7 @@ class Valuebased():
             num -= 1
             coords[0] -= deltas[0]
             coords[1] -= deltas[1]
-        while(self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols)
+        while(self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], size, size)
               and (board[coords[0]-deltas[0]][coords[1]-deltas[1]] == symbol
                    or (not board[coords[0]-deltas[0]][coords[1]-deltas[1]]))
               and num < how_many_to_win):
@@ -173,7 +171,78 @@ class Valuebased():
                     [x_coord, y_coord], (1, -1), board, size, amount, symbol)
                 board[x_coord][y_coord] = ""
 
+    def random_move(self, game):
+        available_squares = []
+        square = 0
+        length = len(game.board)
+        for x_coord in range(length):
+            for y_coord in range(length):
+                if not game.board[x_coord][y_coord]:
+                    available_squares.append(square)
+                square += 1
+        square = choice(available_squares)
+        return ((square // length), (square % length))
+
+    def initialize_scoreboard(self, size, board):
+        scores = [[0 for j in range(size)] for i in range(size)]
+        for a_coord in range(size):
+            for b_coord in range(size):
+                if board[a_coord][b_coord]:
+                    scores[a_coord][b_coord] = -1
+        return scores
+
+    def get_highest_scores(self, size, scores):
+        highest_scores = []
+        max_score = -100
+        for x_coord in range(size):
+            for y_coord in range(size):
+                if scores[x_coord][y_coord] == max_score:
+                    highest_scores.append((x_coord, y_coord))
+                elif scores[x_coord][y_coord] > max_score:
+                    highest_scores = [(x_coord, y_coord)]
+                    max_score = scores[x_coord][y_coord]
+        return highest_scores
+
+    def select_most_central_square(self, size, highest_scores):
+        minimum_distance = size*size / 1.0
+        best_x = -1
+        best_y = -1
+        for coords in highest_scores:
+            dist = ((coords[0]-size//2)**2 + (coords[1]-size//2)**2)**(1/2)
+            if dist < minimum_distance:
+                minimum_distance = dist
+                best_x = coords[0]
+                best_y = coords[1]
+        return (best_x, best_y)
+
+    def check_and_update_two_player_case(self, game, scores, winning_moves, board, symbol, turn):
+        # If only one opponent, check if you can get amount_to_win - 1
+        # in a row open-ended, and add several points to all such positions
+        if game.number_of_players == 2:
+            size = len(board)
+            winning_moves = self.__check_for_open_ended_n_in_row(
+                game.how_many_to_win-1, board, size, symbol)
+            if winning_moves:
+                for move in winning_moves:
+                    scores[move[0]][move[1]] += 100000
+
+        # If only one opponent, check he cannot get amount_to_win - 1
+        # in a row open-ended, and add extra points to all such positions
+            winning_moves = self.__check_for_open_ended_n_in_row(
+                game.how_many_to_win - 1,
+                board, size,
+                game.player_symbols[
+                    (turn+1) % game.number_of_players
+                ]
+            )
+            if winning_moves:
+                for move in winning_moves:
+                    scores[move[0]][move[1]] += 1000
+
     def next_move(self, game, symbol):
+        if 100*random() > self.difficulty:
+            siirto= self.random_move(game)
+            return siirto
         board = game.board.copy()
         size = len(board)
 
@@ -184,11 +253,7 @@ class Valuebased():
             return winning_moves[0]
 
         # Create and initialize score board. Occupied squares have value -1
-        scores = [[0 for j in range(size)] for i in range(size)]
-        for a_coord in range(size):
-            for b_coord in range(size):
-                if board[a_coord][b_coord]:
-                    scores[a_coord][b_coord] = -1
+        scores = self.initialize_scoreboard(size, board)
 
         # Find out what current player number is
         turn = game.player_symbols.index(symbol)
@@ -209,28 +274,7 @@ class Valuebased():
             for move in winning_moves:
                 scores[move[0]][move[1]] += 10000000
 
-        # If only one opponent, check if you can get amount_to_win - 1
-        # in a row open-ended, and add several points to all such positions
-        if game.number_of_players == 2:
-            winning_moves = self.__check_for_open_ended_n_in_row(
-                game.how_many_to_win-1, board, size, symbol)
-            if winning_moves:
-                for move in winning_moves:
-                    scores[move[0]][move[1]] += 100000
-
-        # If only one opponent, check he cannot get amount_to_win - 1
-        # in a row open-ended, and add extra points to all such positions
-        if game.number_of_players == 2:
-            winning_moves = self.__check_for_open_ended_n_in_row(
-                game.how_many_to_win - 1,
-                board, size,
-                game.player_symbols[
-                    (turn+1) % game.number_of_players
-                ]
-            )
-            if winning_moves:
-                for move in winning_moves:
-                    scores[move[0]][move[1]] += 1000
+        self.check_and_update_two_player_case(game, scores, winning_moves, board, symbol, turn)
 
         # Calculate points for all squares
         # Go in how_many_to_win given direction
@@ -243,31 +287,8 @@ class Valuebased():
             self.__calculate_points(
                 board, symb, size, game.how_many_to_win, scores)
 
-        # print("Scores:")
-        # print(scores)
         # Get squares with highest point score
-        highest_scores = []
-        max_score = -100
-        for x_coord in range(size):
-            for y_coord in range(size):
-                if scores[x_coord][y_coord] == max_score:
-                    highest_scores.append((x_coord, y_coord))
-                elif scores[x_coord][y_coord] > max_score:
-                    highest_scores = [(x_coord, y_coord)]
-                    max_score = scores[x_coord][y_coord]
+        highest_scores = self.get_highest_scores(size, scores)
 
-        # print("highest_scores:")
-        # print(highest_scores)
         # If several same, select one in most middle
-        minimum_distance = size*size / 1.0
-        best_x = -1
-        best_y = -1
-        for coords in highest_scores:
-            dist = ((coords[0]-size//2)**2 + (coords[1]-size//2)**2)**(1/2)
-            if dist < minimum_distance:
-                minimum_distance = dist
-                best_x = coords[0]
-                best_y = coords[1]
-        return (best_x, best_y)
-
-        #turn = (turn+1)%game.number_of_players
+        return self.select_most_central_square(size, highest_scores)

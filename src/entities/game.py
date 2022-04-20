@@ -92,19 +92,18 @@ class Game:
         self.__check_if_won_in_direction(x_coord, y_coord, 1, 1)
         self.__check_if_won_in_direction(x_coord, y_coord, 1, -1)
 
-    def add_move(self, x_coord, y_coord, symbol):
-        if self.__is_over:
-            raise IndexError("Game is over")
-        if not isinstance(x_coord, int) or not isinstance(y_coord, int):
-            raise TypeError("Integer value required")
-        if not self.__on_board(x_coord, y_coord):
-            raise IndexError("Off board")
-        if self.__board[x_coord][y_coord]:
-            raise ValueError("Space not empty")
+    def move_is_allowed(self, x_coord, y_coord):
+        return ((not self.__is_over)
+            and isinstance(x_coord, int)
+            and isinstance(y_coord, int)
+            and self.__on_board(x_coord, y_coord)
+            and (not self.__board[x_coord][y_coord]))
 
-        self.__board[x_coord][y_coord] = symbol
-        self.__available_squares -= 1
-        self.__update_status(x_coord, y_coord)
+    def add_move(self, x_coord, y_coord, symbol):
+        if self.move_is_allowed(x_coord, y_coord):
+            self.__board[x_coord][y_coord] = symbol
+            self.__available_squares -= 1
+            self.__update_status(x_coord, y_coord)
 
     def get_winning_row(self):
         winners = []

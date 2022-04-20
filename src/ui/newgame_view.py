@@ -3,10 +3,12 @@ import tkinter as tk
 
 
 class NewGameView:
-    def __init__(self, root, service, show_game_view, screen_width, screen_height):
+    def __init__(self, root, service, show_game_view, show_scores, quit, screen_width, screen_height):
         self._root = root
         self._service = service
         self._show_game_view = show_game_view
+        self._show_scores = show_scores
+        self._quit = quit
         self._frame_a = None
         self._frame_b = None
         self.board_size = 10
@@ -46,9 +48,9 @@ class NewGameView:
         load_button.pack()
         save_button = ttk.Button(master=self._frame_a, text="Save")
         save_button.pack()
-        scores_button = ttk.Button(master=self._frame_a, text="Scores")
+        scores_button = ttk.Button(master=self._frame_a, text="Scores", command=self._show_scores)
         scores_button.pack()
-        quit_button = ttk.Button(master=self._frame_a, text="Quit")
+        quit_button = ttk.Button(master=self._frame_a, text="Quit", command = self._quit)
         quit_button.pack()
 
         lbl_header = ttk.Label(master=self._frame_b,
@@ -86,6 +88,7 @@ class NewGameView:
         n = len(self.added_players)
 
         cbx_player_name = ttk.Combobox(frame_c, width=12)
+        cbx_player_name['values'] = self._service.get_all_players_from_db()
         cbx_player_name.grid(row=n+1, column=0, sticky="sw", padx=4, pady=10)
         #cbx_player_name.bind('<<ComboboxSelected>>', self._add_human_player)
 
