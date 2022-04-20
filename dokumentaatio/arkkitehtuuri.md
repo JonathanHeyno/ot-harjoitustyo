@@ -23,3 +23,31 @@ Pakkaus **ui** sisältää käyttöliittymästä vastaavan koodin. **Services** 
 Pelin logiikasta vastaavien luokkien välistä yhteyttä kuvaa seuraava luokkakaavio
 
 ![luokkakaavio](./kuvat/luokkakaavio.svg)
+
+## Päätoiminnallisuudet
+All on kuvattu sekvenssikaaviolla uuden pelin käynnistämisen tapahtumakulku kahdelle pelaajalle
+### New Game
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant GameService
+  participant Game
+  participant AlgorithmManager
+  participant Player
+  participant PlayerScoresRepository
+  User->>UI: click "New Game" button
+  UI->>GameService: new_game(size, how_many_to_win)
+  GameService->>Game: Game(size, how_many_to_win)
+  UI->>Gameservice: add_player(name, symbol, str_algorithm, difficulty, is_human)
+  GameService->>AlgorithmManager: AlgorithmManager()
+  AlgorithmManager-->>GameService: algorithm
+  GameService->>Player: Player(name, symbol, algorithm, is_human)
+  GameService->>PlayerScoresRepository: add_player(name)
+  UI->>Gameservice: add_player(name, symbol, str_algorithm, difficulty, is_human)
+  GameService->>AlgorithmManager: AlgorithmManager()
+  AlgorithmManager-->>GameService: algorithm
+  GameService->>Player: Player(name, symbol, algorithm, is_human)
+  GameService->>PlayerScoresRepository: add_player(name)
+  UI->UI: _show_game_view()
+```
