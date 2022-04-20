@@ -1,7 +1,7 @@
 # Tic Tac Toe
 Sovelluksella pelataan ristinollaa mielivaltaisen kokoisella ruudukolla mielivaltaista määrää vastustajia vastaan. Ohjelmalla voi pelata myös tietokonepelaajaa vastaan. Ohjelma pitää kirjaa voitoista ja tappioista jokaisen pelaajan (ihmisen) osalta.
 
-Linkki viimeisimpään releaseen: [Uusin release](./releases/tag/viikko5)
+Linkki viimeisimpään releaseen: [Uusin release](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Toimintaympäristö
 Ohjelman toiminta on testattu Python versiolla 3.8 laitoksen Linux ympäristössä. Ohjelma voi toimia myös aikaisemmilla versioilla ja muilla käyttöjärjestelmillä, mutta tätä ei ole varmennettu.
