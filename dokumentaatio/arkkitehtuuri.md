@@ -43,11 +43,13 @@ sequenceDiagram
   GameService->>AlgorithmManager: AlgorithmManager()
   AlgorithmManager-->>GameService: algorithm
   GameService->>Player: Player(name, symbol, algorithm, is_human)
+  Player-->>GameService: player
   GameService->>PlayerScoresRepository: add_player(name)
   UI->>GameService: add_player(name, symbol, str_algorithm, difficulty, is_human)
   GameService->>AlgorithmManager: AlgorithmManager()
   AlgorithmManager-->>GameService: algorithm
   GameService->>Player: Player(name, symbol, algorithm, is_human)
+  Player-->>GameService: player
   GameService->>PlayerScoresRepository: add_player(name)
   UI->UI: _show_game_view()
 ```
