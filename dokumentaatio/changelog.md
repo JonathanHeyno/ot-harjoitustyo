@@ -16,3 +16,5 @@
 ## Viikko 4
 - Graafinen käyttöliittymä pelin pelaamiseksi
 - Invoke tehtävä lintille
+## Viikko 5
+- Pelitulosten tallentaminen tietokantaan
