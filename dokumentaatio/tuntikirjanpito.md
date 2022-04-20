@@ -23,4 +23,6 @@
 | 15.4. | 4    | voittotilastojen tallentaminen tietokantaan |
 | 16.4. | 6    | voittotilastojen tallentaminen tietokantaan |
 | 17.4. | 5    | tietokantojen konfigurointi, pylint korjauksia |
-| yht   | 100  | | 
+| 19.4. | 5    | testit repoille ja tietokannoille |
+| 20.4. | 4    | konfiguraatiotiedoston muokkaus unix ympäristölle, lint korjauksia|
+| yht   | 109  | | 
