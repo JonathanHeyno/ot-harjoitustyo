@@ -25,7 +25,7 @@ Pelin logiikasta vastaavien luokkien välistä yhteyttä kuvaa seuraava luokkaka
 ![luokkakaavio](./kuvat/luokkakaavio.svg)
 
 ## Päätoiminnallisuudet
-All on kuvattu sekvenssikaaviolla uuden pelin käynnistämisen tapahtumakulku kahdelle pelaajalle
+Alla on kuvattu sekvenssikaaviolla uuden pelin käynnistämisen tapahtumakulku kahdelle pelaajalle
 ### New Game
 ```mermaid
 sequenceDiagram
