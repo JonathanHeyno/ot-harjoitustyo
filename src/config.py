@@ -25,6 +25,8 @@ else:
         pass
 
     dirname = dirname[0:len(dirname)-3]
+    if not os.path.exists(dirname + '/data/'):
+        os.makedirs(dirname + '/data/')
 
     DATABASE_FILENAME = os.getenv('DATABASE_FILENAME') or 'database.db'
     DATABASE_FILE_PATH = os.path.join(dirname, 'data', DATABASE_FILENAME)
