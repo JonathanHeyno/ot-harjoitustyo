@@ -12,10 +12,10 @@ Peliä voi pelata normaalisti ihminen. Ohjelmistoon voi helposti lisätä omatek
 ### New game näkymä
   - [x] Käyttäjä voi määrittää ruudukon koon
   - [x] Käyttäjä voi määrittää montako merkkiä pitää saada jonoon
-  - [ ] Käyttäjä voi rekisteröidä uusia pelaajia
+  - [x] Käyttäjä voi rekisteröidä uusia pelaajia
   - [x] Käyttäjä voi määrittää ketkä pelaavat. Pelaajia voi olla enemmän kuin kaksi
   - [x] Käyttäjä voi määrittää millä algoritmeilla tietokonepelaajat pelaavat
-  - [ ] Käyttäjä voi määrittää tietokonepelaajille vaikeustason
+  - [x] Käyttäjä voi määrittää tietokonepelaajille vaikeustason
   - [x] Käyttäjä voi määrittää millä symbolilla kukin pelaaja pelaa
 
 ### Save näkymä
@@ -25,7 +25,7 @@ Peliä voi pelata normaalisti ihminen. Ohjelmistoon voi helposti lisätä omatek
   - [ ] Käyttäjä voi ladata tallennetun pelin
  
 ### Scores näkymä
-  - [ ] Ohjelma näyttää kullekin (ihmis) käyttäjälle voitot, tappiot ja tasapelit
+  - [x] Ohjelma näyttää kullekin (ihmis) käyttäjälle voitot, tappiot ja tasapelit
 
 ## Jatkokehitysideoita
 Perusversion toteutuksen jälkeen seuraavia lisäyksiä voidaan lähteä toteuttamaan ajan riittäessä
