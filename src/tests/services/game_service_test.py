@@ -144,3 +144,12 @@ class TestGameService(unittest.TestCase):
 
     def test_cannot_require_more_to_win_than_fits_board(self):
         self.assertRaises(ValueError, lambda: self.service.new_game(3, 7))
+
+    def test_save_game(self):
+        self.service.add_move_and_get_updates(0)
+        self.service.save('unittest_save')
+        self.service.add_move_and_get_updates(1)
+        self.service.load('unittest_save')
+        self.assertTrue(self.service.board[0][0])
+        self.assertFalse(self.service.board[1][0])
+

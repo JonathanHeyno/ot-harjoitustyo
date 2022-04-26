@@ -2,6 +2,11 @@ from database_connection import get_database_connection
 
 
 def drop_tables(connection):
+    """tyhjentää voittotietokannan
+
+    Args:
+        connection: tietokannan yhteys
+    """
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -12,6 +17,11 @@ def drop_tables(connection):
 
 
 def create_tables(connection):
+    """luo voittotietokantaan taulun
+
+    Args:
+        connection: tietokannan yhteys
+    """
     cursor = connection.cursor()
 
     cursor.execute("""
@@ -27,6 +37,8 @@ def create_tables(connection):
 
 
 def initialize_database():
+    """alustaa tietokannan
+    """
     connection = get_database_connection()
 
     drop_tables(connection)

@@ -1,4 +1,15 @@
 class Game:
+    """Luokka joka pitää yllä pelin tilannetta
+
+    Attributes:
+        is_won: boolean, onko peli voitettu
+        is_over: boolean, onko peli ohi
+        size: pelilaudan koko
+        board: pelilauta jossa pelatut symbolit vastaavissa koordinaateissa
+        how_many_to_win: montaako pitää saada jonoon voittoon
+        player_symbols: lista pelaajien symboleista
+        number_of_players: pelaajien määrä
+    """
     def __init__(self, size, how_many_to_win):
         self.__is_over = False
         self.__is_won = False
@@ -7,7 +18,6 @@ class Game:
         self.__available_squares = size*size
         self.__how_many_to_win = how_many_to_win
         self.__player_symbols = []
-        #self.__number_of_players = 0
 
     @property
     def is_won(self):
@@ -93,6 +103,15 @@ class Game:
         self.__check_if_won_in_direction(x_coord, y_coord, 1, -1)
 
     def move_is_allowed(self, x_coord, y_coord):
+        """palauttaa tiedon onko siirto sallittu
+
+        Args:
+            x_coord: x-koordinaatti
+            y_coord: y-koordinaatti
+
+        Returns:
+            boolean, onko siirto sallittu
+        """
         return ((not self.__is_over)
             and isinstance(x_coord, int)
             and isinstance(y_coord, int)
@@ -100,12 +119,24 @@ class Game:
             and (not self.__board[x_coord][y_coord]))
 
     def add_move(self, x_coord, y_coord, symbol):
+        """lisää siirron laudalle jos se on sallittu siirto
+
+        Args:
+            x_coord: x-koordinaatti
+            y_coord: y-koordinaatti
+            symbol: ruutuun laitettava symboli
+        """
         if self.move_is_allowed(x_coord, y_coord):
             self.__board[x_coord][y_coord] = symbol
             self.__available_squares -= 1
             self.__update_status(x_coord, y_coord)
 
     def get_winning_row(self):
+        """palauttaa voittavan trivin jos peli on voitettu
+
+        Returns:
+            lista voittavien ruutujen koordinaateista
+        """
         winners = []
         for i in range(self.__size):
             for j in range(self.__size):

@@ -1,4 +1,6 @@
 class Human():
+    """dummy algoritmi joka ei tee mitään kun vuorossa on ihmispelaaja
+    """
 
     def __init__(self):
         self._diff = 0

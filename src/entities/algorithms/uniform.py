@@ -2,6 +2,8 @@ from random import choice
 
 
 class Uniform():
+    """algoritmi joka valitsee tasajaukaumasta vapaana olevan ruudun
+    """
 
     @property
     def difficulty(self):
@@ -12,6 +14,15 @@ class Uniform():
         self._diffic = difficulty
 
     def next_move(self, game, symbol):
+        """arpoo tasajakaumasta seuraavan vapaana olevan ruudun
+
+        Args:
+            game: game olio
+            symbol: pelattava symboli
+
+        Returns:
+            arvottu ruutu
+        """
         choices = []
         square = 0
         size = len(game.board)

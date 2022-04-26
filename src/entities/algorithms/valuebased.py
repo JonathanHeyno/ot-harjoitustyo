@@ -2,6 +2,11 @@ from random import choice, random
 
 
 class Valuebased():
+    """algoritmi joka valitsee seuraavan ruudun laskemalla ruuduille arvon
+
+    Attributes:
+        difficulty: vaikeustaso
+    """
 
     @property
     def difficulty(self):
@@ -38,30 +43,24 @@ class Valuebased():
         winning_moves = []
         for x_coord in range(size):
             for y_coord in range(size):
-                #print("x= " + str(x) + " y= "+str(y))
                 if board[x_coord][y_coord]:
                     continue
                 board[x_coord][y_coord] = symbol
-                #print("Asetettiin x= " + str(x) + " y= "+str(y))
                 if self.__check_if_n_in_direction([x_coord, y_coord], (1, 0), board,
                                                   size, how_many_to_win):
                     board[x_coord][y_coord] = ""
-                    #print("eka iffi. x= " + str(x) + " y= " +str(y))
                     winning_moves.append((x_coord, y_coord))
                 elif self.__check_if_n_in_direction([x_coord, y_coord], (0, 1), board,
                                                     size, how_many_to_win):
                     board[x_coord][y_coord] = ""
-                    #print("toka iffi. x= " + str(x) + " y= " +str(y))
                     winning_moves.append((x_coord, y_coord))
                 elif self.__check_if_n_in_direction([x_coord, y_coord], (1, 1), board,
                                                     size, how_many_to_win):
                     board[x_coord][y_coord] = ""
-                    #print("kolmas iffi. x= " + str(x) + " y= " +str(y))
                     winning_moves.append((x_coord, y_coord))
                 elif self.__check_if_n_in_direction([x_coord, y_coord], (1, -1), board,
                                                     size, how_many_to_win):
                     board[x_coord][y_coord] = ""
-                    #print("neljas iffi. x= " + str(x) + " y= " +str(y))
                     winning_moves.append((x_coord, y_coord))
                 else:
                     board[x_coord][y_coord] = ""
@@ -122,8 +121,6 @@ class Valuebased():
     # Check if there are n in a row with empty spaces at both ends
     def __calculate_points_in_direction(self, coords, deltas,
                                         board, size, how_many_to_win, symbol):
-        #rows = size
-        #cols = size
         num = 0
         steps = 1
         points = 0
@@ -171,7 +168,7 @@ class Valuebased():
                     [x_coord, y_coord], (1, -1), board, size, amount, symbol)
                 board[x_coord][y_coord] = ""
 
-    def random_move(self, game):
+    def __random_move(self, game):
         available_squares = []
         square = 0
         length = len(game.board)
@@ -183,7 +180,7 @@ class Valuebased():
         square = choice(available_squares)
         return ((square // length), (square % length))
 
-    def initialize_scoreboard(self, size, board):
+    def __initialize_scoreboard(self, size, board):
         scores = [[0 for j in range(size)] for i in range(size)]
         for a_coord in range(size):
             for b_coord in range(size):
@@ -191,7 +188,7 @@ class Valuebased():
                     scores[a_coord][b_coord] = -1
         return scores
 
-    def get_highest_scores(self, size, scores):
+    def __get_highest_scores(self, size, scores):
         highest_scores = []
         max_score = -100
         for x_coord in range(size):
@@ -203,7 +200,7 @@ class Valuebased():
                     max_score = scores[x_coord][y_coord]
         return highest_scores
 
-    def select_most_central_square(self, size, highest_scores):
+    def __select_most_central_square(self, size, highest_scores):
         minimum_distance = size*size / 1.0
         best_x = -1
         best_y = -1
@@ -215,7 +212,7 @@ class Valuebased():
                 best_y = coords[1]
         return (best_x, best_y)
 
-    def check_and_update_two_player_case(self, game, scores, winning_moves, board, symbol, turn):
+    def __check_and_update_two_player_case(self, game, scores, winning_moves, board, symbol, turn):
         # If only one opponent, check if you can get amount_to_win - 1
         # in a row open-ended, and add several points to all such positions
         if game.number_of_players == 2:
@@ -240,8 +237,17 @@ class Valuebased():
                     scores[move[0]][move[1]] += 1000
 
     def next_move(self, game, symbol):
+        """määrittelee seuraavan siirron
+
+        Args:
+            game: game luokan olio
+            symbol: seuraavaksi laitettava symboli
+
+        Returns:
+            _type_: _description_
+        """
         if 100*random() > self.difficulty:
-            siirto= self.random_move(game)
+            siirto= self.__random_move(game)
             return siirto
         board = game.board.copy()
         size = len(board)
@@ -253,7 +259,7 @@ class Valuebased():
             return winning_moves[0]
 
         # Create and initialize score board. Occupied squares have value -1
-        scores = self.initialize_scoreboard(size, board)
+        scores = self.__initialize_scoreboard(size, board)
 
         # Find out what current player number is
         turn = game.player_symbols.index(symbol)
@@ -274,7 +280,7 @@ class Valuebased():
             for move in winning_moves:
                 scores[move[0]][move[1]] += 10000000
 
-        self.check_and_update_two_player_case(game, scores, winning_moves, board, symbol, turn)
+        self.__check_and_update_two_player_case(game, scores, winning_moves, board, symbol, turn)
 
         # Calculate points for all squares
         # Go in how_many_to_win given direction
@@ -288,7 +294,7 @@ class Valuebased():
                 board, symb, size, game.how_many_to_win, scores)
 
         # Get squares with highest point score
-        highest_scores = self.get_highest_scores(size, scores)
+        highest_scores = self.__get_highest_scores(size, scores)
 
         # If several same, select one in most middle
-        return self.select_most_central_square(size, highest_scores)
+        return self.__select_most_central_square(size, highest_scores)

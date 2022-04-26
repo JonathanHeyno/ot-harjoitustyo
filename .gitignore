@@ -4,6 +4,7 @@
 __pycache__
 .coverage
 htmlcov
+saves
 *__pycache__/
 *.db
 *.py[cod]

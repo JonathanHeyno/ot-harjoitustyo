@@ -3,10 +3,12 @@ import tkinter as tk
 
 
 class NewGameView:
-    def __init__(self, root, service, show_game_view, show_scores, quit, screen_width, screen_height):
+    def __init__(self, root, service, show_game_view, show_save_view, show_load_view, show_scores, quit, screen_width, screen_height):
         self._root = root
         self._service = service
         self._show_game_view = show_game_view
+        self._show_save_view = show_save_view
+        self._show_load_view = show_load_view
         self._show_scores = show_scores
         self._quit = quit
         self._frame_a = None
@@ -23,9 +25,6 @@ class NewGameView:
     def pack(self):
         self._frame_a.pack(fill=tk.Y)
         self._frame_b.pack(fill=tk.BOTH, expand=True)
-        #self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
-        # self._frame_a.pack(fill=constants.X)
-        # self._frame_b.pack(fill=constants.X)
 
     def destroy(self):
         self.board_size = self._ent_board_size.get()
@@ -40,13 +39,12 @@ class NewGameView:
 
         self._frame_b = ttk.Frame(master=self._root)
         self._frame_b.pack(fill=tk.BOTH, expand=True)
-        #self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
 
         start_button = ttk.Button(master=self._frame_a, text="New")
         start_button.pack()
-        load_button = ttk.Button(master=self._frame_a, text="Load")
+        load_button = ttk.Button(master=self._frame_a, text="Load", command=self._show_load_view)
         load_button.pack()
-        save_button = ttk.Button(master=self._frame_a, text="Save")
+        save_button = ttk.Button(master=self._frame_a, text="Save", command=self._show_save_view)
         save_button.pack()
         scores_button = ttk.Button(master=self._frame_a, text="Scores", command=self._show_scores)
         scores_button.pack()
@@ -83,14 +81,12 @@ class NewGameView:
         lbl_symbol = ttk.Label(master=frame_c, text="Symbol")
         lbl_symbol.grid(row=0, column=3, sticky="sw", padx=4, pady=4)
 
-        # list added players
         self._list_added_players(frame_c)
         n = len(self.added_players)
 
         cbx_player_name = ttk.Combobox(frame_c, width=12)
         cbx_player_name['values'] = self._service.get_all_players_from_db()
         cbx_player_name.grid(row=n+1, column=0, sticky="sw", padx=4, pady=10)
-        #cbx_player_name.bind('<<ComboboxSelected>>', self._add_human_player)
 
         cbx_algorithm = ttk.Combobox(frame_c, width=12)
         cbx_algorithm['values'] = self._service.get_algorithms()

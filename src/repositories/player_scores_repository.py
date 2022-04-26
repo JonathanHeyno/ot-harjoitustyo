@@ -1,13 +1,8 @@
-#from pathlib import Path
-#from config import DATABASE_FILE_PATH
 from database_connection import get_database_connection
 
-
-#import sqlite3
-#from repositories.database_connection import get_database_connection
-
 class PlayerScoresRepository:
-    #def __init__(self, connection=get_database_connection()):
+    """repositoryluokka voittotietokannalle
+    """
     def __init__(self, connection):
         self._connection = connection
         cursor = self._connection.cursor()
@@ -24,6 +19,11 @@ class PlayerScoresRepository:
         connection.commit()
 
     def add_player(self, name):
+        """lisää uuden pelaajan nimen voittotietokantaan
+
+        Args:
+            lisättävän pelaajan nimi
+        """
         if not name:
             return
         cursor = self._connection.cursor()
@@ -39,18 +39,39 @@ class PlayerScoresRepository:
         self._connection.commit()
 
     def get_names(self):
+        """hakee listan voittotietokannassa olevien pelaajien niistä
+
+        Returns:
+            lista voittotietokannassa olevien pelaajien nimistä
+        """
         cursor = self._connection.cursor()
         cursor.execute("SELECT name FROM PlayerScores")
         rows = cursor.fetchall()
         return [row["name"] for row in rows]
 
     def get_scores(self):
+        """hakee tietokannassa olevat voittotilastot
+
+        Returns:
+            lista kaikkien pelaajien voitoista, tappioista ja tasapeleistä
+        """
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM PlayerScores")
         rows = cursor.fetchall()
         return [(row["name"], row["wins"], row["losses"], row["draws"]) for row in rows]
 
     def update_score(self, name, win, loss, draw):
+        """päivittää pelaajan voittotilastot kannassa
+
+        Args:
+            name: pelaajan nimi
+            win: voittoihin lisättävä määrä
+            loss: tappioihin lisättävä määrä
+            draw: tasapeleihin lisättävä määrä
+
+        Returns:
+            boolean lisäyksen onnistumisesta
+        """
         if not name:
             return False
 
@@ -65,6 +86,8 @@ class PlayerScoresRepository:
 
 
     def delete_all(self):
+        """poistaa kaikki tiedot kannasta
+        """
         cursor = self._connection.cursor()
         cursor.execute('delete from PlayerScores')
         self._connection.commit()
