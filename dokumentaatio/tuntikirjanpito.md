@@ -27,5 +27,6 @@
 | 20.4. | 4    | konfiguraatiotiedoston muokkaus unix ympäristölle, lint korjauksia|
 |       | 3    | dokumentoinnin päivitys ja sekvenssikaavio|
 | 25.4. | 6    | pelin tallennuksen mahdollistaminen|
-| 26.4. | 8    | pelin tallennuksen mahdollistaminen, tallennetun pelin lataaminen|
+| 26.4. | 4    | pelin tallennuksen mahdollistaminen, tallennetun pelin lataaminen|
+|       | 4    | unittestien päivitys, lint korjauksia|
 | yht   | 126  | | 
