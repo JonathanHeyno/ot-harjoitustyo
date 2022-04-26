@@ -26,4 +26,7 @@
 | 19.4. | 5    | testit repoille ja tietokannoille |
 | 20.4. | 4    | konfiguraatiotiedoston muokkaus unix ympäristölle, lint korjauksia|
 |       | 3    | dokumentoinnin päivitys ja sekvenssikaavio|
-| yht   | 112  | | 
+| 25.4. | 6    | pelin tallennuksen mahdollistaminen|
+| 26.4. | 4    | pelin tallennuksen mahdollistaminen, tallennetun pelin lataaminen|
+|       | 4    | unittestien päivitys, lint korjauksia|
+| yht   | 126  | | 
