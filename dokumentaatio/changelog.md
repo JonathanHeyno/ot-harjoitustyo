@@ -19,3 +19,6 @@
 ## Viikko 5
 - Pelitulosten tallentaminen tietokantaan
 - Testit tietokannoille
+## Viikko 6
+- Pelin tallentaminen tiedostoon
+- Tallennetun pelin lataaminen tiedostosta
