@@ -19,10 +19,10 @@ Peliä voi pelata normaalisti ihminen. Ohjelmistoon voi helposti lisätä omatek
   - [x] Käyttäjä voi määrittää millä symbolilla kukin pelaaja pelaa
 
 ### Save näkymä
-  - [ ] Käyttäjä voi tallentaa pelin tietyllä nimellä
+  - [x] Käyttäjä voi tallentaa pelin tietyllä nimellä
  
 ### Load näkymä
-  - [ ] Käyttäjä voi ladata tallennetun pelin
+  - [x] Käyttäjä voi ladata tallennetun pelin
  
 ### Scores näkymä
   - [x] Ohjelma näyttää kullekin (ihmis) käyttäjälle voitot, tappiot ja tasapelit
