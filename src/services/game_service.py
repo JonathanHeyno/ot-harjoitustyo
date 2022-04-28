@@ -272,7 +272,6 @@ class GameService():
                 self.game.add_move((j//self.size), (j % self.size),
                 parts[7+5*self.__number_of_players+j])
                 self.game.is_over = False
-                self.game.is_won = False
 
         if parts[2] == str(1):
             self.game.is_over= True
