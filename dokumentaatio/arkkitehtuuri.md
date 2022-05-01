@@ -17,8 +17,8 @@ Pakkaus **ui** sisältää käyttöliittymästä vastaavan koodin. **Services** 
 - ![Uniform](../src/entities/algorithms/uniform.py) on algoritmi joka arpoo tasajakaumalla jonkin vapaana olevan ruudun johon laittaa seuraava merkki.
 - ![Valuebased](../src/entities/algorithms/valuebased.py) on algoritmi joka laskee vapaina oleville ruuduille arvot niiden pysty-, vaaka- ja diagonaali akseleilla olevien peräkkäisten merkkien määrien perusteella ja valitsee ruudun jolla on korkein arvo.
 
-**Repositories** pakkuksessa luokka
-- ![PlayerScoreRepository](../src/repositories/player_scores_repository.py) lukee ja kirjoittaa voitto, tappio ja tasapelitilastoja tietokantaan. Tietokanta johon kirjoitetaan määritellään .env ja .env.test tiedostoissa erikseen varsinaisia pelejä ja testausta varten.
+**Repositories** pakkauksessa luokka
+- ![PlayerScoreRepository](../src/repositories/player_scores_repository.py) lukee ja kirjoittaa voitto, tappio ja tasapelitilastoja tietokantaan. Tietokanta johon kirjoitetaan määritellään ![.env](../.env) ja ![.env.test](../.env.test) tiedostoissa erikseen varsinaisia pelejä ja testausta varten.
 
 Pelin logiikasta vastaavien luokkien välistä yhteyttä kuvaa seuraava luokkakaavio
 
