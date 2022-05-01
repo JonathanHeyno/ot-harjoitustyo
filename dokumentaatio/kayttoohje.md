@@ -26,14 +26,17 @@ Peli käynnistyy voittotilastonäkymään. Siirry **New Game** näkymään. Aset
 
 ## Pelin pelaaminen
 Peliä pelataan painamalla haluttuua ruutua. Peli näyttää korostetulla vimmeisimmät tietokonepelaajien tekemät siirrot sekä pelin loputtua voittavan rivin.
+
 ![](./kuvat/game.jpg)
 
 ## Pelin tallentaminen
 Peli voidaan tallentaa siirtymällä **save** näkymään ja antamalla talletettavalle pelille nimi tai vaihtoehtoisesti tallentamalla aiemmin talletetun pelin päälle. Annettuasi nimi pelille, paina **Save** nappia.
+
 ![](./kuvat/save.jpg)
 
 ## Pelin lataaminen
 Tallennetun pelin voi ladata **Load** näkymästä. Valitse tallennettu peli alasvetovalikosta tai kirjoita se, ja paina sitten **Load**-nappia.
+
 ![](./kuvat/load.jpg)
 
 ## Pelitulosten tarkasteleminen
