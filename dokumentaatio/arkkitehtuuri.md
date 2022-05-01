@@ -36,7 +36,7 @@ Käyttöliittymä sisältää viisi eri näkymää ja **quit** toiminnallisuuden
 
 ## Sovelluslogiikka
 ![GameService](../src/services/game_service.py)-luokka tarjoaa siis rajapinnan käyttöliittymälle pelin pelaamiseksi. metodi
-- '''new_game''' alustaa uuden pelin annetun kokoisella laudalla ja tiedolla montako tarvitaan peräkkäin voittoon
+- ````new_game``` alustaa uuden pelin annetun kokoisella laudalla ja tiedolla montako tarvitaan peräkkäin voittoon
 - '''add_player''' lisää uuden pelaajan annetulla pelisymbolilla, algoritmilla ja mahdollisella nimellä. Metodi lisää pelaajan myös voittotilastokantaan jos se on ihmispelaaja kutsumalla ![GameService](../src/services/game_service.py)-luokkaan liitettyä ![PlayerScoreRepository](../src/repositories/player_scores_repository.py) oliota.
 - '''add_move_and_get_updates''' lisää
 
