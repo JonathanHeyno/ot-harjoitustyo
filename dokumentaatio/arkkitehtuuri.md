@@ -26,9 +26,12 @@ Pelin logiikasta vastaavien luokkien välistä yhteyttä kuvaa seuraava luokkaka
 
 ## Käyttöliittymä
 Käyttöliittymä sisältää viisi eri näkymää ja 'quit' toiminnallisuuden.
-- 'NewGame'
+- New game
+- Load game
+- Save game
+- Scores
 
-![UI](./src/ui/ui.py)-luokka vastaa näkymien näyttämisestä.
+![UI](../src/ui/ui.py)-luokka vastaa näkymien näyttämisestä.
 
 ## Päätoiminnallisuudet
 Alla on kuvattu sekvenssikaaviolla uuden pelin käynnistämisen tapahtumakulku kahdelle pelaajalle
