@@ -7,13 +7,22 @@ from services.game_service import game_service
 
 
 class UI:
+    """Graafinen käyttöliittymä
+    """
 
     def __init__(self, root):
+        """luokan konstruktori
+
+        Args:
+            root: tkinter root
+        """
         self._root = root
         self._current_view = None
         self._service = game_service
 
     def start(self):
+        """asettaa aloitusnäkymäksi scores näkymän
+        """
         self._show_scores_view()
 
     def _hide_current_view(self):

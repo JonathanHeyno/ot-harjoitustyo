@@ -58,11 +58,9 @@ class Game:
     @player_symbols.setter
     def player_symbols(self, player_symbols):
         self.__player_symbols = player_symbols
-        #self.__number_of_players = len(player_symbols)
 
     @property
     def number_of_players(self):
-        #return self.__number_of_players
         return len(self.player_symbols)
 
     def __on_board(self, x_coord, y_coord):

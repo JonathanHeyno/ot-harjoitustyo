@@ -3,7 +3,22 @@ import tkinter as tk
 
 
 class GameView:
+    """Pelin näkymä
+    """
     def __init__(self, root, service, handle_show_new_game_view, show_save_view, show_load_view, show_scores, quit, screen_width, screen_height):
+        """luokan konstruktori
+
+        Args:
+            root: tkinter root
+            service: game service, rajapinta peliiin
+            handle_show_new_game_view: asettaa new_game näkymän
+            show_save_view: asettaa save_game näkymän
+            show_load_view: asettaa load_game näkymän
+            show_scores: asettaa show_scores näkymän
+            quit: metodi lopettaa ohjelman
+            screen_width: ikkunan leveys
+            screen_height: ikkunban korkeus
+        """
         self._root = root
         self._handle_show_new_game_view = handle_show_new_game_view
         self._show_save_view = show_save_view
@@ -61,6 +76,8 @@ class GameView:
         self._handle_game_is_over()
 
     def make_computer_moves(self):
+        """hakee GameServiceltä tietokoneen siirrot ja asettaa ne näkyviin
+        """
         moves = self._service.make_computer_moves_and_get_updates()
         self._turn_symbol_variable.set(self._service.turn_symbol)
         for previous_move in self._previous_moves:
@@ -133,7 +150,6 @@ class GameView:
         size = self._service.size
 
         for i in range(size*size):
-            # button = ttk.Button(
             button = ttk.Button(
                 master=self._frame_b,
                 text=self._service.board[i//size][i % size],

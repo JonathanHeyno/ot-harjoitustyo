@@ -20,10 +20,6 @@ class TestGame(unittest.TestCase):
         newgame.add_move(100, 100, 'X')
         self.assertFalse(newgame.is_over)
 
-    #def test_square_location_must_be_integer(self):
-        #self.assertRaises(TypeError, lambda: self.game.add_move('a', 3, 'X'))
-        #self.assertRaises(TypeError, lambda: self.game.add_move(3, 'b', 'X'))
-
     def test_set__is_won_condition(self):
         self.game.is_won = True
         self.assertTrue(self.game.is_won)

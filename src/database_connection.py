@@ -1,6 +1,5 @@
 import sqlite3
 from config import DATABASE_FILE_PATH
-#from config import DATABASE_FILENAME
 
 
 connection = sqlite3.connect(DATABASE_FILE_PATH)

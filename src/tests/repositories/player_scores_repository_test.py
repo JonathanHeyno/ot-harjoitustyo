@@ -7,9 +7,6 @@ from repositories.player_scores_repository import score_repository
 
 class PlayerScoresRepository(unittest.TestCase):
     def setUp(self):
-        #self._connection = get_database_connection()
-        #self.score_repository = PlayerScoresRepository(self._connection)
-        #self.score_repository.delete_all()
         score_repository.delete_all()
         score_repository.add_player("Bill Gates")
         score_repository.add_player("Steve Jobs")

@@ -114,7 +114,6 @@ class GameService():
         if self.game.is_over and self.game.is_won:
             self._winner = self.turn
             for i in range(self.__number_of_players):
-                #if self.players[i].is_human and i == self._winner:
                 if (self.players[i].is_human
                     and self.player_symbols[i] == self.player_symbols[self._winner]):
                     self._player_score_repository.update_score(self.players[i].name, 1, 0, 0)
@@ -142,14 +141,9 @@ class GameService():
         moves.append((i, self.player_symbols[self.turn]))
         self._handle_game_over()
         self.turn = (self.turn + 1) % self.__number_of_players
-        while not self.players[self.turn].is_human and not self.game.is_over:
-            choice = self.players[self.turn].next_move(self.game)
-            self.game.add_move(choice[0], choice[1], choice[2])
-            moves.append(
-                ((choice[0]*self.size + choice[1]), choice[2]))
-            self._handle_game_over()
-            self.turn = (self.turn + 1) % self.__number_of_players
+        moves.extend(self.make_computer_moves_and_get_updates())
         return moves
+
 
     def make_computer_moves_and_get_updates(self):
         """suorittaa tietokonepelaajien siirtoja kunnes tulee ihmispelaajan vuoro tai peli on ohi

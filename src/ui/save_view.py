@@ -2,7 +2,22 @@ from tkinter import ttk, constants, StringVar
 import tkinter as tk
 
 class SaveView:
+    """Save View näkymä
+    """
     def __init__(self, root, service, show_game_view, show_new_game_view, show_load_view, show_scores_view, quit, screen_width, screen_height):
+        """luokan konstruktori
+
+        Args:
+            root: tkinter root
+            service: GameService, pelin rajapinta
+            show_game_view: asettaa pelinäkymän
+            show_new_game_view: asettaa new_game näkymän
+            show_load_view: asettaa load_game näkymän
+            show_scores_view: asettaa scores näkymän
+            quit: metodi lopettaa ohjelman
+            screen_width: ikkunan leveys
+            screen_height: ikkunan korkeus
+        """
         self._root = root
         self._quit = quit
         self._service = service

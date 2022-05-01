@@ -2,7 +2,22 @@ from tkinter import ttk, constants, StringVar
 import tkinter as tk
 
 class LoadView:
+    """load_view näkymä
+    """
     def __init__(self, root, service, show_game_view, show_new_game_view, show_save_view, show_scores_view, quit, screen_width, screen_height):
+        """luokan konstruktori
+
+        Args:
+            root: tkinter root
+            service: GameService, pelin rajapinta
+            show_game_view: näyttää pelinäkymän
+            show_new_game_view : näyttää new_game näkymän
+            show_save_view: näyttää new_game näkymän
+            show_scores_view: näyttää pistetilannenäkymän
+            quit: metodi lopettaa ohjelman
+            screen_width: ikkunan leveys
+            screen_height: ikkunan korkeus
+        """
         self._root = root
         self._quit = quit
         self._service = service
@@ -19,7 +34,6 @@ class LoadView:
     def pack(self):
         self._frame_a.pack(fill = tk.Y)
         self._frame_b.pack(fill=tk.BOTH, expand=True)
-        #self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
 
 
     def destroy(self):
@@ -38,9 +52,6 @@ class LoadView:
 
         lbl_scores = ttk.Label(master = self._frame_b, text="Load", font=('Cambria 25'))
         lbl_scores.grid(row=0, column=0, columnspan=2, padx=20, pady=20)
-        #header_text = f"{'Name of save file':{pad}}"
-        #lbl_header = ttk.Label(master = self._frame_b, text=header_text)
-        #lbl_header.grid(column = 0, padx=20)
         lbl_name = ttk.Label(master = self._frame_b, text='Name of save file:')
         lbl_name.grid(row = 1, column = 1, padx=pad, pady=10)
 
@@ -62,13 +73,11 @@ class LoadView:
 
     def _initialize(self, screen_width, screen_height):
         self._root.geometry(str(screen_width)+"x"+str(screen_height))
-        #self._root.geometry("200x100")
 
         self._frame_a = ttk.Frame(master=self._root)
         self._frame_a.pack(side=tk.LEFT, fill = tk.Y)
 
         self._frame_b = ttk.Frame(master=self._root, width=200, height=100)
-        #self._frame_b.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
         self._frame_b.pack(fill=tk.Y, side=tk.LEFT, expand=True)
 
         start_button = ttk.Button(master=self._frame_a, text="New", command=self._show_new_game_view)

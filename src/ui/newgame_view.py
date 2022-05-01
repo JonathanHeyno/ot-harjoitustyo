@@ -3,7 +3,22 @@ import tkinter as tk
 
 
 class NewGameView:
+    """New game näkymä
+    """
     def __init__(self, root, service, show_game_view, show_save_view, show_load_view, show_scores, quit, screen_width, screen_height):
+        """luokan konsruktori
+
+        Args:
+            root (_type_): tkinter root
+            service (_type_): GameService, pelin rajapinta
+            show_game_view (_type_): asettaa new_game näkymän
+            show_save_view (_type_): asettaa save_game näkymän
+            show_load_view (_type_): asettaa load_game näkymän
+            show_scores (_type_): asettaa scores näkymän
+            quit (_type_): metodi lopettaa ohjelman
+            screen_width (_type_): ikkunan leveys
+            screen_height (_type_): ikkunan korkeus
+        """
         self._root = root
         self._service = service
         self._show_game_view = show_game_view
