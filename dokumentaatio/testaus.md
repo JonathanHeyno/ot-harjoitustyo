@@ -14,7 +14,7 @@ Testauskessa käytetyt tiedostot ovat **tests** hakemistossa, joka noudattaa sam
 ### Testauskattavuus
 Käyttöliittymän testaus on jätetty testauksen ulkopuolelle. Tällöin haarautumakattavuus on 87%
 
-![](./dokumentaatio/kuvat/haaraumakattavuus.jpg)
+![](./kuvat/haaraumakattavuus.jpg)
 
 `config.py` tiedoston haaraumakattavuus on alhainen koska siinä muodostetaan aina polut eri tavalla riippuen onko käytössä Windows ympäristö vai Linux. Näin ollen vaiin jompi kumpi haara tulee käytyä läpi kun testit ajetaan.
 
@@ -26,7 +26,7 @@ initialize_database() metodin testaus komentoriviltä ajettaessa on myös jätet
 `game_service_test.py` tiedostossa on joitain testejä joilla käydään läpi lyhyehkö peli kokonaisuudessa ja katsotaan päätyykö peli oikein loppuun. Muilta osin järjestelmää on testattu manuaalisesti. Etenkin käyttöliittymän toiminnan varmentaminen on suoritettu täysin manuaalisesti
 
 ### Asennus ja konfigurointi
-Sovellus on haettu ja asennettu alusta alkaensekä linux että Windows ympäristössä ![käyttöohjeessa](../dokumentaatio/kayttoohje.md) kuvatulla tavalla.
+Sovellus on haettu ja asennettu alusta alkaensekä linux että Windows ympäristössä ![käyttöohjeessa](./kayttoohje.md) kuvatulla tavalla.
 
 ### Toiminnallisuudet
-![Määrittelydokumentissa](../dokumentaatio/vaatimusmaarittely.md) listatut toiminnallisuudet on käyty myös manuaalisesti läpi ja todettu että ne toimivat sekä Windows että Linux ympäristössä. Ohjelmaa ei olla saatu kaatumaan tai toimimaan virheellisesti millään käyttöliittymän kautta annetulla syötteellä tai toiminnolla.
+![Määrittelydokumentissa](./vaatimusmaarittely.md) listatut toiminnallisuudet on käyty myös manuaalisesti läpi ja todettu että ne toimivat sekä Windows että Linux ympäristössä. Ohjelmaa ei olla saatu kaatumaan tai toimimaan virheellisesti millään käyttöliittymän kautta annetulla syötteellä tai toiminnolla.
