@@ -57,7 +57,7 @@ sequenceDiagram
   participant AlgorithmManager
   participant Player
   participant PlayerScoresRepository
-  User->>UI: click "New Game" button
+  User->>UI: click "Start" button
   UI->>GameService: new_game(size, how_many_to_win)
   GameService->>Game: Game(size, how_many_to_win)
   Game-->>GameService: game
@@ -75,3 +75,5 @@ sequenceDiagram
   GameService->>PlayerScoresRepository: add_player(name)
   UI->UI: _show_game_view()
 ```
+
+Käyttäjä painaa "Start" painiketta jolloin kenttiin kirjoitetut tiedot luetaan ja välitetään ![GameService](../src/services/game_service.py) oliolle. Tämä siis alustaa pelin ja lisää pelaajat jonka jälkeen laitetaan pelinäkymä ![GameView](../src/ui/game_view.py) näkyville.
