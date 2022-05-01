@@ -22,8 +22,7 @@ Ohjelma luo itse tarvittavan tietokannan
 ## Pelin aloittaminen
 Peli käynnistyy voittotilastonäkymään. Siirry **New Game** näkymään. aseta ruudukon koko sekä tieto montako pitää saada poeräkkäin voittoon. Lisää pelaajat peliin. Ihmis pelaajille voi antaa nimen jolloin järjestelmä pitää kirjaa tämän voitoista, tappioista ja tasapeleistä. Merkitse pelaajan pelisymboli, esim "X" vastaavaan symbolikenttään. Paina lopuksi **add** nappia jolloin pelaaja tulee lisätyksi. Voit sitten lisätä muite pelaajia jotta ei tarvitse pelata yksin. Algorithms alasvetovalikosta voi valita tietokonevastustajien käyttämää algoritmia, ja difficulty mittarista niiden vaikeustason jos ko. algoritmi sellaista tukee. Nämä lisätään myös **add** nappulasta. Pelaajat voidaan poistaa pelistä **remove** nappulasta. Kun pelaajat ja pelilaudan koko on asetettu, peli voidaan käynnistää **start** nappulasta.
 
-![pakkausrakenne](./dokumentaatio/kuvat/new_game.jpg)
-![pakkausrakenne](./kuvat/pakkauskaavio.svg)
+![](./kuvat/new_game.jpg)
 
 ## Pelin pelaaminen
 Peliä pelataan painamalla haluttuua ruutua. Peli näyttää korostetulla vimmeisimmät tietokonepelaajien tekemät siirrot sekä pelin loputtua voittavan rivin.
@@ -31,11 +30,11 @@ Peliä pelataan painamalla haluttuua ruutua. Peli näyttää korostetulla vimmei
 
 ## Pelin tallentaminen
 Peli voidaan tallentaa siirtymällä **save** näkymään ja antamalla talletettavalle pelille nimi tai vaihtoehtoisesti tallentamalla aiemmin talletetun pelin päälle. Annettuasi nimi pelille, paina **Save** nappia.
-![](./dokumentaatio/kuvat/save.jpg)
+![](./kuvat/save.jpg)
 
 ## Pelin lataaminen
 Tallennetun pelin voi ladata **Load** näkymästä. Valitse tallennettu peli alasvetovalikosta tai kirjoita se, ja paina sitten **Load**-nappia.
-![](./dokumentaatio/kuvat/load.jpg)
+![](./kuvat/load.jpg)
 
 ## Pelitulosten tarkasteleminen
 Siirry **Scores** näkymään tarkastelemaan pelaajien voittotilastoja.
