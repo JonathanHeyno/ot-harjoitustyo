@@ -29,4 +29,5 @@
 | 25.4. | 6    | pelin tallennuksen mahdollistaminen|
 | 26.4. | 4    | pelin tallennuksen mahdollistaminen, tallennetun pelin lataaminen|
 |       | 4    | unittestien päivitys, lint korjauksia|
-| yht   | 126  | | 
+|  1.5. | 2    | docstring dokumentointi, koodin refaktorointi|
+| yht   | 128  | | 
