@@ -24,6 +24,12 @@ Pelin logiikasta vastaavien luokkien välistä yhteyttä kuvaa seuraava luokkaka
 
 ![luokkakaavio](./kuvat/luokkakaavio.svg)
 
+## Käyttöliittymä
+Käyttöliittymä sisältää viisi eri näkymää ja 'quit' toiminnallisuuden.
+- 'NewGame'
+
+![UI](./src/ui/ui.py)-luokka vastaa näkymien näyttämisestä.
+
 ## Päätoiminnallisuudet
 Alla on kuvattu sekvenssikaaviolla uuden pelin käynnistämisen tapahtumakulku kahdelle pelaajalle
 ### New Game
