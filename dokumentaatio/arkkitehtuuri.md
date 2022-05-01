@@ -46,8 +46,9 @@ Ohjelma tallentaa pysyväistietoja kahteen paikkaan: pelaajien voittotilastoja t
 Pelin tallennuksessa käyttäjä määrittelee ![SaveView](../src/ui/save_view.py)-näkymässä tiedoston nimen johon pelin tilanne tallennetaan, joka sitten kutsuu ![GameService](../src/services/game_service.py) luokan metodia `save` annetulla tiedostonimellä. Tämä kirjoittaa kaikki pelin tilannetiedot (pelaajien tiedot, ruuduissa olevat pelimerkit) ulkoiseen tekstitiedostoon jossa tiedot ovat eritettynä "§" merkillä. Pelin lataaminen tapahtuu vastaavasti ![LoadView](../src/ui/load_view.py)-näkymässä lukemalla käyttjän määrittelemä tiedosto sisään ja asettamalla siinä oleva pelitilanne voimaan.
 
 ## Päätoiminnallisuudet
+Alla on kuvattu sekvenssikaavioilla muutama keskeinen toiminnallisuus: uuden pelin alustaminen ja ihmiskäyttäjän tekemä häviävä siirto tietokonepelaajaa vstaan
 
-### New Game
+### Uusi peli
 Alla on kuvattu sekvenssikaaviolla uuden pelin käynnistämisen tapahtumakulku kahdelle pelaajalle
 
 ```mermaid
@@ -79,3 +80,54 @@ sequenceDiagram
 ```
 
 Käyttäjä painaa ![NewGameView](../src/ui/newgame_view.py) näkymässä "Start" painiketta jolloin kenttiin kirjoitetut tiedot luetaan ja välitetään ![GameService](../src/services/game_service.py) oliolle. Tämä siis alustaa pelin ja lisää pelaajat peliin ja voittotietokantaan jos ne puutuvat sieltä, jonka jälkeen laitetaan pelinäkymä ![GameView](../src/ui/game_view.py) näkyville.
+
+### Ihminen tekee häviävän siirron tietokonepelaajaa vastaan
+Alla on kuvattu tapahtumankulkua kun ihmispelaaja tekee siirron jonka jälkeen ![Valuebased](../src/entities/algorithms/valuebased.py)-algoritmilla toimiva tieotkonepelaaja tekee voittavan siirron.
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant GameService
+  participant Game
+  participant Player
+  participant Valuebased
+  participant PlayerScoresRepository
+  User->>UI: _handle_button_click("button_number")
+  UI->>GameService: add_move_and_get_updates("button_number")
+  GameService->>Game: move_is_allowed(x-coord, y-coord)
+  Game-->>GameService: True
+  GameService->>Game: add_move(x-coord, y-coord, symbol)
+  GameService->>Game: is_over()
+  Game-->>GameService: False
+  GameService->>Player: is_human()
+  Player-->>GameService: False
+  GameService->>Game: is_over()
+  Game-->>GameService: False
+  GameService->>Player: next_move(game)
+  Player->>Valuebased: next_move(game)
+  Valuebased-->>Player: (x-coord, y-coord)
+  Player-->>GameService: (x-coord, y-coord, symbol)
+  GameService->>Game: is_over()
+  Game-->>GameService: True
+  GameService->>Game: is_won()
+  Game-->>GameService: True
+  GameService->>Player: is_human()
+  Player-->>GameService: True
+  GameService->>PlayerScoreRepository: update_score("Player_name", 0, 1, 0)
+  GameService->>Player: is_human()
+  Player-->>GameService: False
+  GameService-->>UI: [(x-coord, y-coord, symbol)]
+  UI->>GameService: turn_symbol()
+  UI-->>GameService: "turn_symbol"
+  UI->>GameService: game_is_over()
+  GameService-->>UI: True
+  UI->>GameService: game_is_won()
+  GameService-->>UI: True
+  UI->>GameService: winner_symbol()
+  GameService-->>UI: "winner_symbol"
+  UI->>GameService: get_winning_row()
+  GameService-->>UI: [winning_row]
+```
+
+Kun käyttäjä on painanun jonkin ruudun nappia, painetun ruudun numero välitetään ![GameService](../src/services/game_service.py) oliolle joka kysyy ensiksi ![Game](../src/entities/game.py)-oliolta onko siirto sallittu jonka jälkeen se käskee tätä päivittämään siirron peliin. Tämän jälkeen tartkistetaan onko peli ohi, ja kun se ei ole, kysytään seuraavalta pelaajalta onko se ihmispelaaja. Koska tämä ei ole, niin kutsutaan tämän pelaajan metodia `next_move` joka puolestaan kysyy siihen liitetyltä algoritmilta mikä ruutu valitaan seuraavaksi ja palauttaa tämän tiedon. Jälleen katsotaan onko peli ohi. Koska tietokoneen tekemä siirto oli voittava, niin se on. Tällöin lähdetään käymään läpi kaikkia pelissä olevia pelaajia ja päivittämään niiden voitto tai tappiotiedot tietokantaan jos ko. pelaajat ovat ihmisiä. Tietokantapäivitykset tapatuvat ![PlayerScoreRepository](../src/repositories/player_scores_repository.py)-olion välityksellä. Käyttäjän tekemä siirto ja kaikkien tietokonepelaajien tekemät siirrot sen jälkeen palautetaan käyttöliittymälle. Käyttöliittymä kysyy ![GameService](../src/services/game_service.py) oliolta seuraavaksi vuorossa olevan pelaajan symbolia onko peli ohi
