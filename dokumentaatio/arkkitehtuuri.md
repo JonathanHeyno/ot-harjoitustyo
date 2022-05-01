@@ -9,7 +9,7 @@ Pakkaus **ui** sisältää käyttöliittymästä vastaavan koodin. **Services** 
 
 **Entities** pakkauksessa luokka
 - ![Game](../src/entities/game.py) ylläpitää tietoa pelin tilasta: missä ruudussa on mikäkin symboli (tai tyhjä ruutu) ja siltä voi kysyä onko peli loppunut, onko joku voittanut pelin ja missä voittava rivi on. Sille myöskin kerrotaan mihin ruutuun laitetaan seuraava symboli.
-- ![Player](../src/entities/player.py) kuvastaa pelaajaa. Siltä kysytään pelaajan seuraavaa siirtoa. Player luokka välittää pyynnön siihen liitettyyn algoritmiin joka palauttaa ko. pelaajan seuraavan siirron. Erikoisalgoritmi *Human* kysyy siis käyttäjältä mikä seuraava siirto pitäisi olla. Muut algoritmit päättävät jollain logiikalla minkä siirron tietokonepelaajan pitäisi tehdä.
+- ![Player](../src/entities/player.py) kuvastaa pelaajaa. Siltä kysytään pelaajan seuraavaa siirtoa. ![Player](../src/entities/player.py)-luokka välittää pyynnön siihen liitettyyn algoritmiin joka palauttaa ko. pelaajan seuraavan siirron. Erikoisalgoritmi ![Human](../src/entities/algorithms/human.py) kysyy siis käyttäjältä mikä seuraava siirto pitäisi olla. Muut algoritmit päättävät jollain logiikalla minkä siirron tietokonepelaajan pitäisi tehdä.
 - ![AlgorithmManager](../src/entities/algorithm_manager.py) ylläpitää listaa kaikista eri algoritmeista. Ideana on että ohjelmistoa voi laajentaa luomalla itse erilaisia algoritmeja joiden perusteella tietokone päätää mitä tehdä. Jokaiseen ![Player](../src/entities/player.py) luokan olioon liitetään siis yksi algoritmi joka vuorollaan päättää minkä siirron ko. pelaajan pitäisi tehdä. Erikoisalgoritmina on ![Human](../src/entities/algorithms/human.py) jolla kysytään ihmis-käyttäjältä mitä pitäisi seuraavaksi tehdä.
 
 **Algorithms** pakkauksessa luokka
@@ -25,7 +25,7 @@ Pelin logiikasta vastaavien luokkien välistä yhteyttä kuvaa seuraava luokkaka
 ![luokkakaavio](./kuvat/luokkakaavio.svg)
 
 ## Käyttöliittymä
-Käyttöliittymä sisältää viisi eri näkymää ja 'quit' toiminnallisuuden.
+Käyttöliittymä sisältää viisi eri näkymää ja **quit** toiminnallisuuden.
 - ![GameView](../src/ui/game_view.py)  näyttää itse pelin tilanteen, eli ruudukon ja siinä olevat merkit
 - ![NewGameView](../src/ui/newgame_view.py)  näkymässä määritetään pelin parametrit kuten laudan koko ja pelaajat
 - ![LoadView](../src/ui/load_view.py) näkymässä valitaan tallennettu tiedosto ja ladataan siitä pelin tilanne
