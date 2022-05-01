@@ -46,8 +46,10 @@ Ohjelma tallentaa pysyväistietoja kahteen paikkaan: pelaajien voittotilastoja t
 Pelin tallennuksessa käyttäjä määrittelee ![SaveView](../src/ui/save_view.py)-näkymässä tiedoston nimen johon pelin tilanne tallennetaan, joka sitten kutsuu ![GameService](../src/services/game_service.py) luokan metodia `save` annetulla tiedostonimellä. Tämä kirjoittaa kaikki pelin tilannetiedot (pelaajien tiedot, ruuduissa olevat pelimerkit) ulkoiseen tekstitiedostoon jossa tiedot ovat eritettynä "§" merkillä. Pelin lataaminen tapahtuu vastaavasti ![LoadView](../src/ui/load_view.py)-näkymässä lukemalla käyttjän määrittelemä tiedosto sisään ja asettamalla siinä oleva pelitilanne voimaan.
 
 ## Päätoiminnallisuudet
-Alla on kuvattu sekvenssikaaviolla uuden pelin käynnistämisen tapahtumakulku kahdelle pelaajalle
+
 ### New Game
+Alla on kuvattu sekvenssikaaviolla uuden pelin käynnistämisen tapahtumakulku kahdelle pelaajalle
+
 ```mermaid
 sequenceDiagram
   actor User
@@ -76,4 +78,4 @@ sequenceDiagram
   UI->UI: _show_game_view()
 ```
 
-Käyttäjä painaa "Start" painiketta jolloin kenttiin kirjoitetut tiedot luetaan ja välitetään ![GameService](../src/services/game_service.py) oliolle. Tämä siis alustaa pelin ja lisää pelaajat jonka jälkeen laitetaan pelinäkymä ![GameView](../src/ui/game_view.py) näkyville.
+Käyttäjä painaa ![NewGameView](../src/ui/newgame_view.py) näkymässä "Start" painiketta jolloin kenttiin kirjoitetut tiedot luetaan ja välitetään ![GameService](../src/services/game_service.py) oliolle. Tämä siis alustaa pelin ja lisää pelaajat peliin ja voittotietokantaan jos ne puutuvat sieltä, jonka jälkeen laitetaan pelinäkymä ![GameView](../src/ui/game_view.py) näkyville.
