@@ -3,6 +3,7 @@ Sovelluksella pelataan ristinollaa mielivaltaisen kokoisella ruudukolla mielival
 
 ## Releases
 [Release Viikko 6](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/viikko6)
+
 [Release Viikko 5](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Toimintaympäristö
