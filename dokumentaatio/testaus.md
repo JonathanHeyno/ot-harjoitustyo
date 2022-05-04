@@ -9,7 +9,7 @@ Testauskessa käytetyt tiedostot ovat **tests** hakemistossa, joka noudattaa sam
 `GameService` luokkaa testataan **services** kansiossa *game_service_test.py* tiedostossa luomalla `MockPlayerScoreRepository` olio joka injektoidaan testeissä käytetylle `GameService`-oliolle. **Entities** kansiossa tiedosto *game_test.py* testaa `Game` luokkaa,
 
 ### Repository
-**repositories** hakemistossa *player_scores_repository_test.py* sitä vastaavaa luokkaa käyttämällä ![.env.test](../.env.test)-tiedostossa määriteltyä tietokantaa tavallisesti käytettävän tietokannan sijaan.
+**repositories** hakemistossa *player_scores_repository_test.py* sitä vastaavaa luokkaa käyttämällä [.env.test](../.env.test)-tiedostossa määriteltyä tietokantaa tavallisesti käytettävän tietokannan sijaan.
 
 ### Testauskattavuus
 Käyttöliittymän testaus on jätetty testauksen ulkopuolelle. Tällöin haarautumakattavuus on 87%
@@ -26,7 +26,7 @@ initialize_database() metodin testaus komentoriviltä ajettaessa on myös jätet
 *game_service_test.py* tiedostossa on joitain testejä joilla käydään läpi lyhyehkö peli kokonaisuudessa ja katsotaan päätyykö peli oikein loppuun. Muilta osin järjestelmää on testattu manuaalisesti. Etenkin käyttöliittymän toiminnan varmentaminen on suoritettu täysin manuaalisesti
 
 ### Asennus ja konfigurointi
-Sovellus on haettu ja asennettu alusta alkaensekä linux että Windows ympäristössä ![käyttöohjeessa](./kayttoohje.md) kuvatulla tavalla.
+Sovellus on haettu ja asennettu alusta alkaensekä linux että Windows ympäristössä [käyttöohjeessa](./kayttoohje.md) kuvatulla tavalla.
 
 ### Toiminnallisuudet
-![Määrittelydokumentissa](./vaatimusmaarittely.md) listatut toiminnallisuudet on käyty myös manuaalisesti läpi ja todettu että ne toimivat sekä Windows että Linux ympäristössä. Ohjelmaa ei olla saatu kaatumaan tai toimimaan virheellisesti millään käyttöliittymän kautta annetulla syötteellä tai toiminnolla.
+[Määrittelydokumentissa](./vaatimusmaarittely.md) listatut toiminnallisuudet on käyty myös manuaalisesti läpi ja todettu että ne toimivat sekä Windows että Linux ympäristössä. Ohjelmaa ei olla saatu kaatumaan tai toimimaan virheellisesti millään käyttöliittymän kautta annetulla syötteellä tai toiminnolla.
