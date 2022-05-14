@@ -30,4 +30,6 @@
 | 26.4. | 4    | pelin tallennuksen mahdollistaminen, tallennetun pelin lataaminen|
 |       | 4    | unittestien päivitys, lint korjauksia|
 |  1.5. | 5    | dokumentointi, koodin refaktorointi|
-| yht   | 131  | | 
+| 14.5. | 1    | koodikatselmuksen issuet huomioitu: asetettu peliruudukolle maksimikoko|
+|       |      | ja lisätty kommentointia koodin|
+| yht   | 132  | | 
