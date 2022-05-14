@@ -7,7 +7,7 @@ Sovelluksella pelataan ristinollaa maksimissaan 50x50 kokoisella ruudukolla miel
 [Release Viikko 5](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Toimintaympäristö
-Ohjelman toiminta on testattu Python versiolla 3.8 laitoksen Linux ympäristössä. Ohjelma voi toimia myös aikaisemmilla versioilla ja muilla käyttöjärjestelmillä, mutta tätä ei ole varmennettu.
+Ohjelman toiminta on testattu Python versiolla 3.8 laitoksen Linux ympäristössä sekä Windowsissa. Ohjelma voi toimia myös aikaisemmilla versioilla ja muilla käyttöjärjestelmillä, mutta tätä ei ole varmennettu.
 
 ## Dokumentaatio
 - [Käyttöohje](./dokumentaatio/kayttoohje.md)
