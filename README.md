@@ -1,5 +1,5 @@
 # Tic Tac Toe
-Sovelluksella pelataan ristinollaa mielivaltaisen kokoisella ruudukolla mielivaltaista määrää vastustajia vastaan. Ohjelmalla voi pelata myös tietokonepelaajaa vastaan. Ohjelma pitää kirjaa voitoista ja tappioista jokaisen pelaajan (ihmisen) osalta.
+Sovelluksella pelataan ristinollaa maksimissaan 50x50 kokoisella ruudukolla mielivaltaista määrää vastustajia vastaan. Ohjelmalla voi pelata myös tietokonepelaajia vastaan. Ohjelma pitää kirjaa voitoista ja tappioista jokaisen pelaajan (ihmisen) osalta.
 
 ## Releases
 [Release Viikko 6](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/viikko6)
