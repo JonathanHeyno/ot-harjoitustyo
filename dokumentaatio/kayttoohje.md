@@ -48,5 +48,5 @@ Ohjelman voi lopettaa **Quit** painikkeesta.
 ## Ohjelman laajentaminen omatekoisilla algoritmeilla
 Tietokonepelaajat pelaavat niille määrättyjen algoritmien mukaisesti. Peliä voi laajentaa luomalla itse niille algoritmeja seuraavasti:
 - Luo algoritmille luokka. Luokalla pitää olla property ja setteri nimeltä `difficulty` (vaikka se ei vaikeustason perusteella osaisikaan muuttaa käyttäytymistään) ja metodi `next_move(game, symbol)` joka palauttaa tuplena seuraavan siirron x ja y koordinaatit **(x, y)**. Metodille annetaan siis peli-olio ja vuorossa olevan pelaajan symboli. Peli-oliolta voidaan kysellä mm. pelilaudan tilannetta ja pelaajien lukumäärää.
-- Kyseinen luokka laitetaan kansioon _ \src\entities\algoritms\ _
+- Kyseinen luokka laitetaan kansioon \src\entities\algoritms\
 - Luokka ja sen nimitys lisätään **AlgoritmManager** luokan konstruktorissa olevaan dictiin jotta sen voi valita käyttöliittymässä
