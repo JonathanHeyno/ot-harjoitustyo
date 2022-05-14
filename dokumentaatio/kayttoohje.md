@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa ohjelman viimeisin [release](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/viikko6)
+Lataa ohjelman viimeisin [release](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Konfigurointi
 Voittotilastot tallentuvat [.env](../.env)-tiedostossa määriteltyyn tietokantaan \data\ nimiseen kansioon. Pelien tallennus tapahtuu \saves\ nimiseen kansioon. Nämä polut määrietetään [config.py](../src/config.py)-tiedostossa.
