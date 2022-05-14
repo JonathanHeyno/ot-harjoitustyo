@@ -1,6 +1,6 @@
 # Vaatimusmäärittely
 ## Sovelluksen tarkoitus
-Sovelluksella pelataan ristinollaa mielivaltaisen kokoisella ruudukolla mielivaltaista määrää vastustajia vastaan. Ohjelmalla voi pelata myös tietokonepelaajaa vastaan. Ohjelma pitää kirjaa voitoista ja tappioista jokaisen pelaajan (ihmisen) osalta.
+Sovelluksella pelataan ristinollaa maksimissaan 50x50 kokoisella ruudukolla mielivaltaista määrää vastustajia vastaan. Ohjelmalla voi pelata myös tietokonepelaajia vastaan. Ohjelma pitää kirjaa voitoista ja tappioista jokaisen pelaajan (ihmisen) osalta.
 
 ## Toimintaympäristö
 Ohjelmiston tulee toimia työpöytäsovelluksena laitoksen Linux-koneilla tai uusimmat päivitykset sisältävällä cubbli-linuxilla. Ohjelmisto toimii Python versiolla 3.8. Aiempien python versioiden suhteen ohjelmiston toimintaa ei testata.
