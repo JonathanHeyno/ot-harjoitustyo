@@ -2,6 +2,8 @@
 Sovelluksella pelataan ristinollaa maksimissaan 50x50 kokoisella ruudukolla mielivaltaista määrää vastustajia vastaan. Ohjelmalla voi pelata myös tietokonepelaajia vastaan. Ohjelma pitää kirjaa voitoista ja tappioista jokaisen pelaajan (ihmisen) osalta.
 
 ## Releases
+[Loppupalautus](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/loppupalautus)
+
 [Release Viikko 6](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/viikko6)
 
 [Release Viikko 5](https://github.com/JonathanHeyno/ot-harjoitustyo/releases/tag/viikko5)
