@@ -130,7 +130,7 @@ class Game:
             self.__update_status(x_coord, y_coord)
 
     def get_winning_row(self):
-        """palauttaa voittavan trivin jos peli on voitettu
+        """palauttaa voittavan rivin jos peli on voitettu
 
         Returns:
             lista voittavien ruutujen koordinaateista
