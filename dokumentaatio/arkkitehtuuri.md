@@ -119,7 +119,7 @@ sequenceDiagram
   Player-->>GameService: False
   GameService-->>UI: [(x-coord, y-coord, symbol)]
   UI->>GameService: turn_symbol()
-  UI-->>GameService: "turn_symbol"
+  GameService-->>UI: "turn_symbol"
   UI->>GameService: game_is_over()
   GameService-->>UI: True
   UI->>GameService: game_is_won()
