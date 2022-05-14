@@ -22,3 +22,5 @@
 ## Viikko 6
 - Pelin tallentaminen tiedostoon
 - Tallennetun pelin lataaminen tiedostosta
+## Loppupalautus
+- Koodikatselmuksen huomautusten perusteella ruudukon maksimikooksi asetettu 50x50 (tieto päivitetty määrittelydokumenttiin)
