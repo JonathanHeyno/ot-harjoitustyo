@@ -69,8 +69,12 @@ class Game:
         return True
 
     def __check_if_won_in_direction(self, x_coord, y_coord, delta_x, delta_y):
+    # For given x and y, check if it is part of a winning row in some direction
+    # defined by delta x and y (horizontal, vertical, diagonal)
         if not self.__board[x_coord][y_coord]:
             return []
+        # First go as far in this direction as there are consecutive squares
+        # with the same symbol
         while(self.__on_board(x_coord+delta_x, y_coord+delta_y)
               and self.__board[x_coord+delta_x][y_coord+delta_y]
               == self.__board[x_coord][y_coord]):
@@ -79,6 +83,8 @@ class Game:
         in_a_row = 1
         winners = []
         winners.append((x_coord, y_coord))
+        # Then go in opposite direction counting the amount of consecutive squares
+        # with the same symbol
         while(self.__on_board(x_coord-delta_x, y_coord-delta_y)
               and self.__board[x_coord-delta_x][y_coord-delta_y] == self.__board[x_coord][y_coord]
               and in_a_row < self.__how_many_to_win):

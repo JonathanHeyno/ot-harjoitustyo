@@ -9,15 +9,15 @@ class NewGameView:
         """luokan konsruktori
 
         Args:
-            root (_type_): tkinter root
-            service (_type_): GameService, pelin rajapinta
-            show_game_view (_type_): asettaa new_game näkymän
-            show_save_view (_type_): asettaa save_game näkymän
-            show_load_view (_type_): asettaa load_game näkymän
-            show_scores (_type_): asettaa scores näkymän
-            quit (_type_): metodi lopettaa ohjelman
-            screen_width (_type_): ikkunan leveys
-            screen_height (_type_): ikkunan korkeus
+            root: tkinter root
+            service: GameService, pelin rajapinta
+            show_game_view: asettaa new_game näkymän
+            show_save_view: asettaa save_game näkymän
+            show_load_view: asettaa load_game näkymän
+            show_scores: asettaa scores näkymän
+            quit: metodi lopettaa ohjelman
+            screen_width: ikkunan leveys
+            screen_height: ikkunan korkeus
         """
         self._root = root
         self._service = service
@@ -69,7 +69,7 @@ class NewGameView:
         lbl_header = ttk.Label(master=self._frame_b,
                                text="New game", font=('Cambria 25'))
         lbl_header.grid(row=0, column=0, columnspan=2, pady=20)
-        lbl_board_size = ttk.Label(master=self._frame_b, text="Board size")
+        lbl_board_size = ttk.Label(master=self._frame_b, text="Board size (max 50)")
         lbl_board_size.grid(row=1, column=0, sticky="w", padx=5)
         self._ent_board_size = ttk.Entry(master=self._frame_b, width=3)
         self._ent_board_size.insert(tk.END, self.board_size)
@@ -193,7 +193,9 @@ class NewGameView:
                 self._service.add_player(
                     player[0], player[3], player[1], player[2], player[1] == "Human")
             if self._service.number_of_players == 0:
-                self._show_error("Invalid input")
+                self._show_error("No players")
+            elif size > 50:
+                self._show_error("Board too big")
             else:
                 self._show_game_view()
         except:

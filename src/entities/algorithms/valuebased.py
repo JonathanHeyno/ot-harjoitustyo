@@ -22,13 +22,19 @@ class Valuebased():
         return True
 
     def __check_if_n_in_direction(self, coords, deltas, board, size, amount):
+    # For given x and y, check if it is part of a row in some direction
+    # with n consecutive squares with the same symbol
         rows = size
         cols = size
+        # First go as far in this direction as there are consecutive squares
+        # with the same symbol
         while(self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols)
               and board[coords[0]+deltas[0]][coords[1]+deltas[1]] == board[coords[0]][coords[1]]):
             coords[0] += deltas[0]
             coords[1] += deltas[1]
         in_a_row = 1
+        # Then go in opposite direction counting the amount of consecutive squares
+        # with the same symbol
         while(self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols)
               and board[coords[0]-deltas[0]][coords[1]-deltas[1]] == board[coords[0]][coords[1]]
               and in_a_row < amount):
@@ -66,24 +72,31 @@ class Valuebased():
                     board[x_coord][y_coord] = ""
         return winning_moves
 
+    # Check if there are n in a row with empty spaces at both ends
     def __open_ended_n_in_direction(self, coords, deltas, board,
                                     size, how_many_to_win):
         rows = size
         cols = size
+        # First go as far in this direction as there are consecutive squares
+        # with the same symbol
         while(self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols)
               and board[coords[0]+deltas[0]][coords[1]+deltas[1]] == board[coords[0]][coords[1]]):
             coords[0] += deltas[0]
             coords[1] += deltas[1]
+        # Check that the next square is empty
         if ((not self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], rows, cols)) or
                 board[coords[0]+deltas[0]][coords[1]+deltas[1]]):
             return False
         in_a_row = 1
+        # Then go in opposite direction counting the amount of consecutive squares
+        # with the same symbol
         while(self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols)
               and board[coords[0]-deltas[0]][coords[1]-deltas[1]] == board[coords[0]][coords[1]]
               and in_a_row < how_many_to_win):
             in_a_row += 1
             coords[0] -= deltas[0]
             coords[1] -= deltas[1]
+        # And check that the last square is empty
         if ((not self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], rows, cols)) or
                 board[coords[0]-deltas[0]][coords[1]-deltas[1]]):
             return False
@@ -118,12 +131,14 @@ class Valuebased():
                     board[x_coord][y_coord] = ""
         return winning_moves
 
-    # Check if there are n in a row with empty spaces at both ends
+
     def __calculate_points_in_direction(self, coords, deltas,
                                         board, size, how_many_to_win, symbol):
         num = 0
         steps = 1
         points = 0
+        # First go in this direction if there are empty or consecutive squares
+        # with the same symbol as needed to win
         while(self.__on_board(coords[0]+deltas[0], coords[1]+deltas[1], size, size)
               and (board[coords[0]+deltas[0]][coords[1]+deltas[1]] == symbol
                    or (not board[coords[0]+deltas[0]][coords[1]+deltas[1]]))
@@ -131,6 +146,7 @@ class Valuebased():
             coords[0] += deltas[0]
             coords[1] += deltas[1]
             num += 1
+        # Count how many of them were not empty and give points for them
         while num > 0:
             if board[coords[0]][coords[1]] == symbol:
                 points += 1
@@ -138,6 +154,7 @@ class Valuebased():
             num -= 1
             coords[0] -= deltas[0]
             coords[1] -= deltas[1]
+        # Continue in opposite direction
         while(self.__on_board(coords[0]-deltas[0], coords[1]-deltas[1], size, size)
               and (board[coords[0]-deltas[0]][coords[1]-deltas[1]] == symbol
                    or (not board[coords[0]-deltas[0]][coords[1]-deltas[1]]))
